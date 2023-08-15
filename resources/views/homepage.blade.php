@@ -9,12 +9,12 @@
 </head>
 <body>
     <header>
-        <nav> 
+        <nav>
             <div class="navLeft">
                 <a href="/plants">Plants</a>
                 <a href="#">Pots</a>
             </div>
-            <div class="navRight"> 
+            <div class="navRight">
                 <a href="#">Log In</a>
                 <a href="#">Cart</a>
             </div>
@@ -29,7 +29,7 @@
                 <button>Let's go</button>
             </div>
         </div>
-        <div class="products"> 
+        <div class="products">
             <div class="product">
                 <div class="productImage">
                     <img src="{{ URL::asset('images/plant1.jpg') }}" alt="">
@@ -63,14 +63,17 @@
     </main>
     <footer>
         <div class="footer">
+            <div class="footerLogo">
+                <a href="#"><img src="" alt=""></a>
+            </div>
             <div class="footerLeft">
                 <a href="#">Home</a>
                 <a href="#">About</a>
                 <a href="#">Contact</a>
             </div>
             <div class="footerRight">
-                <a href="#">Log In</a>
-                <a href="#">Cart</a>
+                <a href="#"><b>Cart</b></a>
+                <a href="#"><b>Log In</b></a>
             </div>
         </div>
     </footer>
