@@ -4,20 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/e63de0730d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}" />
-    <title>Plants</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <script src="{{ asset('js/script.js') }}"></script>
+    <title>Mage's Greens</title>
 </head>
 <body>
     <header>
         <nav> 
-            <div class="navLeft">
-                <a href="/plants">Plants</a>
-                <a href="#">Pots</a>
+            <a href="/" class="logo"><b>Mage's Greens</b></a>
+            <!-- Navigation links (hidden by default) -->
+            <div id="myLinks">
+              <a href="/plants">Plants</a>
+              <a href="#">Pots</a>
+              <a href="#">Log In</a>
+              <a href="#">Cart</a>
             </div>
-            <div class="navRight"> 
-                <a href="#">Log In</a>
-                <a href="#">Cart</a>
-            </div>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+            <a href="javascript:void(0);" class="icon" onclick="burgerMenu()">
+              <i class="fa fa-bars fa-lg"></i>
+            </a>
         </nav>
     </header>
     <main>

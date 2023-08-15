@@ -7,3 +7,73 @@
     --color6: #1A3001;
 }
 
+* {
+    font-family: 'Lora', serif;
+}
+
+ body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+ 
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+.logo {
+    width: 50px;
+    white-space: nowrap;
+}
+
+header { 
+    width: auto;
+    height: 10%;
+}
+
+nav {
+    overflow: hidden;
+    position: relative;
+}
+  
+nav #myLinks {
+    display: none;
+    
+}
+
+nav a {
+    color: var(--color2);
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+  
+nav a.icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+  
+.icon {
+    color: var(--color2);
+}
+
+nav a.icon:hover {
+    background-color: var(--color3);
+}
+
+.wallpaper {
+    width: 100%;
+    background-image: url("/assets/main.jpg");
+    color: black;
+}
