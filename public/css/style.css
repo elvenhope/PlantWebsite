@@ -2,16 +2,21 @@
     --color1: #60BB68; 
     --color2: #1B2A3A;
     --color3: #D0D5D5;
-    --color4: #858A94;
+    --color4: #434447;
     --color5: #E3C257;
     --color6: #1A3001;
+    --color7: #443B2C;
 }
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 
 * {
     font-family: 'Lora', serif;
 }
 
- body {
+/* Normalizing */
+
+body {
     margin: 0;
     padding: 0;
 }
@@ -26,12 +31,14 @@ p {
     padding: 0;
 }
 
-
-
+/* Styling */
 
 .logo {
     width: 50px;
     white-space: nowrap;
+    color: var(--color4);
+    font-family: 'Lora', serif;
+    font-size: 20px;
 }
 
 header { 
@@ -39,41 +46,150 @@ header {
     height: 10%;
 }
 
-nav {
-    overflow: hidden;
-    position: relative;
-}
-  
-nav #myLinks {
-    display: none;
-    
-}
-
-nav a {
-    color: var(--color2);
-    padding: 14px 16px;
+a {
     text-decoration: none;
-    font-size: 17px;
-    display: block;
-}
-  
-nav a.icon {
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-  
-.icon {
-    color: var(--color2);
+    color: var(--color4);
 }
 
-nav a.icon:hover {
-    background-color: var(--color3);
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color4);
+    height: 50px;
+    padding: 1em 1.5em 1em 1em;
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu > li {
+    margin: 0 1rem;
+    overflow: hidden;
+  }
+  
+  .menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #menu-toggle {
+    display: none;
+  }
+  
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
+    background-color: var(--color4);
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+  }
+  
+  .menu-button::before {
+    content: '';
+    margin-top: -8px;
+  }
+  
+  .menu-button::after {
+    content: '';
+    margin-top: 8px;
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+  
+li svg {
+    display: none;
 }
+
+  @media (max-width: 700px) {
+    .menu-button-container {
+      display: flex;
+    }
+    .menu {
+      position: absolute;
+      top: 0;
+      margin-top: 82px;
+      left: 0;
+      flex-direction: column;
+      width: 100%;
+      justify-content: left;
+      align-items: center;
+    }
+    #menu-toggle ~ .menu li {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #menu-toggle:checked ~ .menu li {
+      border-bottom: 1px solid var(--color4);
+      height: 2.5em;
+      padding: 0.5em;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #menu-toggle:checked ~ .menu li:first-child {
+        border-top: 1px solid var(--color4);
+    }
+
+    .menu > li {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      margin: 0;
+      padding: 0.5em 0;
+      width: 100%;
+      color: var(--color4);
+      background-color: white;
+    }
+
+    li a {
+        color: var(--color4);
+        padding-left: 1em;
+      }
+    
+      li svg {
+        display: inline;
+        width: 20px;
+        height: 20px;
+        color: var(--color4);
+        margin-left: auto;
+        padding-right: 1em;
+      }
+  }
+
 
 .wallpaper {
     width: 100%;
+    height: 500px;
     background-image: url("/assets/main.jpg");
-    color: black;
+    color: white;
 }

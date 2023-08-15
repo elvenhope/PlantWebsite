@@ -15,18 +15,33 @@
 <body>
     <header>
         <nav> 
-            <a href="/" class="logo"><b>Mage's Greens</b></a>
-            <!-- Navigation links (hidden by default) -->
-            <div id="myLinks">
-              <a href="/plants">Plants</a>
-              <a href="#">Pots</a>
-              <a href="#">Log In</a>
-              <a href="#">Cart</a>
-            </div>
-            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-            <a href="javascript:void(0);" class="icon" onclick="burgerMenu()">
-              <i class="fa fa-bars fa-lg"></i>
-            </a>
+            <div class="top-nav">
+                <div>
+                  <a href="/" class="logo"><b>Mage's Greens</b></a>
+                </div>
+                <input id="menu-toggle" type="checkbox" />
+                <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+              </label>
+                <ul class="menu">
+                  <li>
+                    <a href="/plants">Plants</a>
+                    <svg class="h-5 w-5 text-sold-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                  </li>
+                  <li>
+                    <a href="#">Pots</a>
+                    <svg class="h-5 w-5 text-sold-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                  </li>
+                  <li>
+                    <a href="#">Log In</a>
+                    <svg class="h-5 w-5 text-sold-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                  </li>
+                  <li>
+                    <a href="#">Cart</a>
+                    <svg class="h-5 w-5 text-sold-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                  </li>
+                </ul>
+              </div>
         </nav>
     </header>
     <main>
