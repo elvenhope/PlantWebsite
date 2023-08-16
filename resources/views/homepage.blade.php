@@ -4,20 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/e63de0730d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}" />
-    <title>Plants</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <script src="{{ asset('js/script.js') }}"></script>
+    <title>Mage's Greens</title>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="navLeft">
-                <a href="/plants">Plants</a>
-                <a href="#">Pots</a>
-            </div>
-            <div class="navRight">
-                <a href="#">Log In</a>
-                <a href="#">Cart</a>
-            </div>
+        <nav> 
+            <div class="top-nav">
+                <div>
+                  <a href="/" class="logo"><b>Mage's Greens</b></a>
+                </div>
+                <input id="menu-toggle" type="checkbox" />
+                <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+              </label>
+                <ul class="menu">
+                  <li>
+                    <a href="/plants">Plants</a>
+                    <svg class="h-5 w-5 text-sold-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                  </li>
+                  <li>
+                    <a href="#">Pots</a>
+                    <svg class="h-5 w-5 text-sold-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                  </li>
+                  <li>
+                    <a href="#">Log In</a>
+                    <svg class="h-5 w-5 text-sold-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                  </li>
+                  <li>
+                    <a href="#">Cart</a>
+                    <svg class="h-5 w-5 text-sold-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                  </li>
+                </ul>
+              </div>
         </nav>
     </header>
     <main>

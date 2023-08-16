@@ -21,3 +21,6 @@ Route::get('plants', function(){
     return view('plants');
 });
 
+Route::get('product', function(){
+    return view('product');
+});
