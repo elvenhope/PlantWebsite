@@ -25,33 +25,56 @@
               </label>
                 <ul class="menu">
                   <li>
-                    <a href="/plants">Plants</a>
-                    <svg class="h-5 w-5 text-sold-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    <a href="/plants">
+                        <i class="fa-solid fa-seedling mobile-icon" style="color: #434447;"></i>
+                        <span class="nav-text">Plants<span>
+                    </a>
+                    <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
+                  <li>
+                    <a href="#">
+                        <i class="fa-regular fa-address-book mobile-icon" style="color: #434447;"></i>
+                        <span class="nav-text">Contacts<span>
+                    </a>
+                    <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
                   </li>
                   <li>
-                    <a href="#">Pots</a>
-                    <svg class="h-5 w-5 text-sold-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                  </li>
+                    <a href="#">
+                        <i class="fa-solid fa-right-to-bracket mobile-icon" style="color: #434447;"></i>
+                        <span class="nav-text">Log In<span>
+                        </a>
+                        <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
+                </li>
                   <li>
-                    <a href="#">Log In</a>
-                    <svg class="h-5 w-5 text-sold-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                  </li>
-                  <li>
-                    <a href="#">Cart</a>
-                    <svg class="h-5 w-5 text-sold-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    <a href="#">
+                        <i class="fas fa-solid fa-sharp fa-light fa-cart-shopping mobile-icon" style="color: #434447;"></i>
+                        <span class="nav-text">Cart<span>
+                    </a>
+                    <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
                   </li>
                 </ul>
               </div>
         </nav>
     </header>
     <main>
+        <div class="hwrap">
+                <div class="hitem">
+                    <span><strong>Free shipping</strong> for orders over €50,-</span>
+                    <span>30 days Mage's <strong>health guarantee</strong></span>
+                    <span><strong>Free returns</strong> for orders over €50,-</span>
+                </div>
+        </div>
         <div class="wallpaper">
-            <h1>touching the hearts of all plants</h1>
+            <h1 class="text-wrapper">touching the<br>hearts of<br>all plants</h1>
             <div class="overlay">
                 <h2>Summer sale</h2>
-                <p>Enim aliqua occaecat est et magna ex voluptate id minim magna do tempor.</p>
+                <p>Elevate your plant care game this summer with PLNTS, <br>your ultimate resource for all things green and vibrant!</p>
                 <button>Let's go</button>
             </div>
+        </div>
+        <div class="mobile-overlay">
+            <h2>Summer sale</h2>
+            <p>Enim aliqua occaecat est et magna ex voluptate id minim magna do tempor.</p>
+            <button>Let's go</button>
         </div>
         <div class="products"> 
             <div class="product">
