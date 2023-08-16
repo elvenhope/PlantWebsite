@@ -71,11 +71,6 @@
                 <button>Let's go</button>
             </div>
         </div>
-        <div class="mobile-overlay">
-            <h2>Summer sale</h2>
-            <p>Enim aliqua occaecat est et magna ex voluptate id minim magna do tempor.</p>
-            <button>Let's go</button>
-        </div>
         <div class="products"> 
             <div class="product">
                 <div class="productImage">
@@ -110,14 +105,17 @@
     </main>
     <footer>
         <div class="footer">
+            <div class="footerLogo">
+                <a href="#"><img src="" alt=""></a>
+            </div>
             <div class="footerLeft">
                 <a href="#">Home</a>
                 <a href="#">About</a>
                 <a href="#">Contact</a>
             </div>
             <div class="footerRight">
-                <a href="#">Log In</a>
-                <a href="#">Cart</a>
+                <a href="#"><b>Cart</b></a>
+                <a href="#"><b>Log In</b></a>
             </div>
         </div>
     </footer>
