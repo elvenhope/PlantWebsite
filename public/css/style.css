@@ -352,7 +352,6 @@ button:hover {
         margin-left: auto;
         padding-right: 1em;
       }
-<<<<<<< HEAD
       .overlay {
         display: none;
       }
@@ -362,18 +361,7 @@ button:hover {
         color: white;
       }
   }
-=======
-  }
-
-
-.wallpaper {
-    width: 100%;
-    height: 500px;
-    background-image: url("/assets/main.jpg");
-    color: white;
-}
-
-
+  
 
 footer {
     background-color: #e5e5e5;
@@ -401,5 +389,4 @@ footer {
 .footerRight {
     display: flex;
     flex-direction: column;
-
->>>>>>> fe52b092b272750bad0f7933db4a22d30a9fe791
+}
