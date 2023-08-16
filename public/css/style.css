@@ -6,7 +6,7 @@
     --color5: #E3C257;
     --color6: #1A3001;
 }
-
+/*
 * {
     margin: 0;
     padding: 0;
@@ -31,7 +31,7 @@ a:hover {
 a:active {
     color: var(--color2);
     text-decoration: none;
-}
+} */
 
 footer {
     background-color: #e5e5e5;
