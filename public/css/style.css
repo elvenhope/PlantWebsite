@@ -7,37 +7,14 @@
     --color6: #1A3001;
     --color7: #443B2C;
 }
-/*
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-a:link {
-    color: var(--color2);
-    text-decoration: none;
-}
-
-a:visited {
-    color: var(--color2);
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--color2);
-    text-decoration: none;
-}
-
-a:active {
-    color: var(--color2);
-    text-decoration: none;
-} */
 
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
 * {
     font-family: 'Lora', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Normalizing */
@@ -51,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
 }
- 
+
 p {
     margin: 0;
     padding: 0;
@@ -67,7 +44,7 @@ p {
     font-size: 20px;
 }
 
-header { 
+header {
     width: auto;
     height: 10%;
 }
@@ -85,22 +62,22 @@ a {
     color: var(--color4);
     height: 50px;
     padding: 1em 1.5em 1em 1em;
-  }
-  
-  .menu {
+}
+
+.menu {
     display: flex;
     flex-direction: row;
     list-style-type: none;
     margin: 0;
     padding: 0;
-  }
-  
-  .menu > li {
+}
+
+.menu > li {
     margin: 0 1rem;
     overflow: hidden;
-  }
-  
-  .menu-button-container {
+}
+
+.menu-button-container {
     display: none;
     height: 100%;
     width: 30px;
@@ -108,15 +85,15 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  
-  #menu-toggle {
+}
+
+#menu-toggle {
     display: none;
-  }
-  
-  .menu-button,
-  .menu-button::before,
-  .menu-button::after {
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
     display: block;
     background-color: var(--color4);
     position: absolute;
@@ -124,37 +101,37 @@ a {
     width: 30px;
     transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
     border-radius: 2px;
-  }
-  
-  .menu-button::before {
+}
+
+.menu-button::before {
     content: '';
     margin-top: -8px;
-  }
-  
-  .menu-button::after {
+}
+
+.menu-button::after {
     content: '';
     margin-top: 8px;
-  }
-  
-  #menu-toggle:checked + .menu-button-container .menu-button::before {
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
     margin-top: 0px;
     transform: rotate(405deg);
-  }
-  
-  #menu-toggle:checked + .menu-button-container .menu-button {
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
     background: rgba(255, 255, 255, 0);
-  }
-  
-  #menu-toggle:checked + .menu-button-container .menu-button::after {
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
     margin-top: 0px;
     transform: rotate(-405deg);
-  }
-  
+}
+
 li svg {
     display: none;
 }
 
-  @media (max-width: 700px) {
+@media (max-width: 700px) {
     .menu-button-container {
       display: flex;
     }
@@ -201,7 +178,7 @@ li svg {
         color: var(--color4);
         padding-left: 1em;
       }
-    
+
       li svg {
         display: inline;
         width: 20px;
@@ -210,8 +187,7 @@ li svg {
         margin-left: auto;
         padding-right: 1em;
       }
-  }
-
+}
 
 .wallpaper {
     width: 100%;
@@ -220,7 +196,7 @@ li svg {
     color: white;
 }
 
-
+/* Footer */
 
 footer {
     background-color: #e5e5e5;
@@ -248,4 +224,25 @@ footer {
 .footerRight {
     display: flex;
     flex-direction: column;
+}
 
+
+a:link {
+    color: var(--color2);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--color2);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color2);
+    text-decoration: none;
+}
+
+a:active {
+    color: var(--color2);
+    text-decoration: none;
+}
