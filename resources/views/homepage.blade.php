@@ -71,6 +71,11 @@
                 <button>Let's go</button>
             </div>
         </div>
+        <div class="mobile-overlay">
+            <h2>Summer sale</h2>
+            <p>Elevate your plant care game this summer with PLNTS, <br>your ultimate resource for all things green and vibrant!</p>
+            <button>Let's go</button>
+        </div>
         <div class="products"> 
             <div class="product">
                 <div class="productImage">
