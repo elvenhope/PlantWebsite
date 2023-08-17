@@ -24,3 +24,8 @@ Route::get('plants', function(){
 Route::get('product', function(){
     return view('product');
 });
+
+
+Route::get('authorisation', function(){
+    return view('authorisation');
+});
