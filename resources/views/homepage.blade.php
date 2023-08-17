@@ -12,6 +12,14 @@
     <script src="{{ asset('js/script.js') }}"></script>
     <title>Mage's Greens</title>
 </head>
+<!-- Start of LiveChat (www.livechat.com) code -->
+<script>
+    window.__lc = window.__lc || {};
+    window.__lc.license = 15930369;
+    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+</script>
+<noscript><a href="https://www.livechat.com/chat-with/15930369/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+<!-- End of LiveChat code -->
 <body>
     <header>
         <nav>
@@ -25,49 +33,73 @@
               </label>
                 <ul class="menu">
                   <li>
-                    <a href="/plants">Plants</a>
-                    <svg class="h-5 w-5 text-sold-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    <a href="/plants">
+                        <i class="fa-solid fa-seedling mobile-icon" style="color: #434447;"></i>
+                        <span class="nav-text">Plants<span>
+                    </a>
+                    <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
+                  <li>
+                    <a href="#">
+                        <i class="fa-regular fa-address-book mobile-icon" style="color: #434447;"></i>
+                        <span class="nav-text">Contacts<span>
+                    </a>
+                    <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
                   </li>
                   <li>
-                    <a href="#">Pots</a>
-                    <svg class="h-5 w-5 text-sold-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                  </li>
+                    <a href="#">
+                        <i class="fa-solid fa-right-to-bracket mobile-icon" style="color: #434447;"></i>
+                        <span class="nav-text">Log In<span>
+                        </a>
+                        <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
+                </li>
                   <li>
-                    <a href="#">Log In</a>
-                    <svg class="h-5 w-5 text-sold-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                  </li>
-                  <li>
-                    <a href="#">Cart</a>
-                    <svg class="h-5 w-5 text-sold-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    <a href="#">
+                        <i class="fas fa-solid fa-sharp fa-light fa-cart-shopping mobile-icon" style="color: #434447;"></i>
+                        <span class="nav-text">Cart<span>
+                    </a>
+                    <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
                   </li>
                 </ul>
               </div>
         </nav>
     </header>
     <main>
+        <div class="hwrap">
+                <div class="hitem">
+                    <span><strong>Free shipping</strong> for orders over €50,-</span>
+                    <span>30 days Mage's <strong>health guarantee</strong></span>
+                    <span><strong>Free returns</strong> for orders over €50,-</span>
+                </div>
+        </div>
         <div class="wallpaper">
-            <h1>touching the hearts of all plants</h1>
+            <h1 class="text-wrapper">touching the<br>hearts of<br>all plants</h1>
             <div class="overlay">
                 <h2>Summer sale</h2>
-                <p>Enim aliqua occaecat est et magna ex voluptate id minim magna do tempor.</p>
+                <p>Elevate your plant care game this summer with PLNTS, <br>your ultimate resource for all things green and vibrant!</p>
                 <button>Let's go</button>
             </div>
         </div>
-        <div class="products">
+        <div class="mobile-overlay">
+            <h2>Summer sale</h2>
+            <p>Elevate your plant care game this summer with PLNTS, <br>your ultimate resource for all things green and vibrant!</p>
+            <button>Let's go</button>
+        </div>
+        <div class="products"> 
+            <h2>Product list</h2>
             <div class="product">
                 <div class="productImage">
                     <img src="{{ URL::asset('images/plant1.jpg') }}" alt="">
                 </div>
                 <div class="productInfo">
-                    <h2>Grape</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Product info</p>
                 </div>
             </div>
             <div class="product">
                 <div class="productImage">
                     <img src="{{ URL::asset('images/plant2.jpg') }}" alt="">
                 </div>
-            <button>View all</button>
+                <button>View all</button>
+            </div>
         </div>
         <div class="shipping-notice">
             <img src="{{ URL::asset('images/shipping-notice.png') }}" alt="">
@@ -76,13 +108,18 @@
         <div class="featured-image">
             <img src="{{ URL::asset('images/featured-image.jpg') }}" alt="">
         <div>
-        <div class="google-review">
-            <h2><b>Magesgreens.com</b> is rated <b>excellent</b> by our customers.</h2>
+        <div id="review">
+            <p><b>Magesgreens.com</b> is rated <b>excellent</b> by our customers.</p>
         </div>
+        <div class='sk-ww-google-reviews' data-embed-id='181499'></div><script src='https://widgets.sociablekit.com/google-reviews/widget.js' async defer></script>        
         <div class="assistant">
-            <img src="{{ URL::asset('images/assistant.jpg') }}" alt="">
-            <h2>Hi, I'm Alex, your Mage's Greens guide!</h2>
-            <button>Can I help you?</button>
+            <div id="assistantImage">
+                <img src="{{ URL::asset('assets/assistant.jpg') }}" alt="">
+            </div>
+            <div id="assistantGreet">
+                <h2 id="assistantText">Hi, I'm Alex, your Mage's Greens guide!</h2>
+                <button>Can I help you?</button>
+            </div>
         </div>
     </main>
     <footer class="myFooter">
