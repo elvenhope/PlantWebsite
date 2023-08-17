@@ -7,36 +7,10 @@
     --color6: #1A3001;
     --color7: #443B2C;
 }
-/*
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-a:link {
-    color: var(--color2);
-    text-decoration: none;
-}
-
-a:visited {
-    color: var(--color2);
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--color2);
-    text-decoration: none;
-}
-
-a:active {
-    color: var(--color2);
-    text-decoration: none;
-} */
 
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
-*:not(i) {
+*:not(i){
     font-family: 'Lora', serif;
 }
 
@@ -65,6 +39,7 @@ p {
     color: var(--color4);
     font-family: 'Lora', serif;
     font-size: 20px;
+    margin-left: 24px;
 }
 
 header { 
@@ -75,10 +50,18 @@ header {
     background-color: white;
 }
 
-a {
+nav a {
+    box-shadow: inset 0 0 0 0 var(--color5);
     text-decoration: none;
     color: var(--color4);
+    transition: color .4s ease-in-out, box-shadow .4s ease-in-out;
 }
+
+nav a:hover {
+  color: #fff;
+  box-shadow: inset 200px 0 0 0 var(--color5);
+}
+
 
 .top-nav {
     display: flex;
@@ -186,6 +169,7 @@ li .list-arrow {
     --tw-content: "\2713";
     content: var(--tw-content);
     margin-right: 4px;
+    color: orange;
 }
 
 strong {
@@ -211,7 +195,7 @@ strong {
 .text-wrapper {
     background-color: rgba(255, 255, 255, 0.5);
     margin-right: 20px;
-    margin-left: 20px;
+    margin-left: 40px;
     margin-bottom: 20px;
 }
 
@@ -255,11 +239,12 @@ h1 {
 button {
     border-radius: 20px;
     background-color: var(--color7);
-    width: 30%;
+    width: 130px;
     height: 10%;
     color: white;
     border: none;
     font-size: 18px;
+    font-family: proxima-nova,sans-serif;
     transition-duration: 0.4s;
 }
 
@@ -270,6 +255,57 @@ button:hover {
     transition-duration: 0.4s;
 }
 
+#review {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    /* background-color: red; */
+}
+
+#review p{
+    font-family: proxima-nova,sans-serif;
+    font-weight: 100;
+}
+
+#review b {
+    font-family: proxima-nova,sans-serif;
+}
+
+
+.assistant {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color:rgba(227, 194, 87, 1);
+    color: white;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px 40px 20px;
+    margin-top: 50px;
+}
+
+#assistantText {
+    font-family: proxima-nova,sans-serif;
+    margin-bottom: 20px;
+}
+
+.assistant img {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    float: right;
+}
+
+#assistantImage {
+    margin-right: 80px;
+}
+
+
+.assistant button{
+    width: 170px;
+    height: 40px;
+    font-family: proxima-nova,sans-serif;
+}
 
 /* Footer */
 
@@ -404,4 +440,20 @@ footer {
         height: 35px;
         width: 150px;
       }
+
+      #assistantImage {
+        margin-right: 20px;
+      }
+
+      #assistantText {
+        font-size: 1.2em;
+      }
+
+      .assistant button {
+        width: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 1em;
+      }
+
   }
