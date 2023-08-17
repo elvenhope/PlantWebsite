@@ -175,6 +175,10 @@ div.soc-media div.connect {
     margin-top: 1em;
 }
 
+.soc-media a:hover {
+    transform: scale(1.1);
+}
+
 div.soc-media a.facebook {
     background: #3a589a;
     margin-top: 0.8em;
