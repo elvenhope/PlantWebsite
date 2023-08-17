@@ -9,29 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-    <!-- <script src="{{ asset('js/script.js') }}"></script> -->
-    <script>
-        function myFunction1() {
-            //document.querySelector('#login-form').addEventListener('click', () => {
-            //document.querySelector('#login').classList.add('magic');
-            //});
-            document.querySelector('#login').classList.add('magic');
-            document.querySelector('#sign-up').classList.remove('magic');
-        }
-        function myFunction2() {
-            //document.querySelector('#sign-up-form').addEventListener('click', () => {
-            //document.querySelector('#sign-up').classList.add('magic');
-            //});
-            document.querySelector('#sign-up').classList.add('magic');
-            document.querySelector('#login').classList.remove('magic');
-        }
-    </script>
     <title>Mage's Greens</title>
 </head>
 <body>
     <div class="login-page">
         <div class="form">
-            <form class="register-form" id="sign-up" method="post">
+            <form class="register-form" method="post">
                 <h2>Register</h2>
                 <input type="text" placeholder="Full Name *" required/>
                 <input type="text" placeholder="Username *" required/>
@@ -44,9 +27,21 @@
                     <span></span>
                     Create Account
                 </a>
-                <p class="message" id="login-form">Already registered? <a href="#" onclick="myFunction1()">Sign In</a></p>
+                <div class="soc-media">
+                    <div class="connect">Connect with</div>
+                    <a href="#" class="facebook">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="google">
+                        <i class="fa-brands fa-google" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="github">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <p class="message">Already registered? <a href="#">Sign In</a></p>
             </form>
-            <form class="login-form" id="login" method="post">
+            <form class="login-form" method="post">
                 <h2>Login</h2>
                 <input type="text" placeholder="Username *" required/>
                 <input type="password" placeholder="Password *" required/>
@@ -57,9 +52,27 @@
                     <span></span>
                     Sign in
                 </a>
-                <p class="message" id="sign-up-form">Not registered? <a href="#" onclick="myFunction2()">Create an account</a></p>
+                <div class="soc-media">
+                    <div class="connect">Connect with</div>
+                    <a href="#" class="facebook">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="google">
+                        <i class="fa-brands fa-google" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="github">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <p class="message">Not registered? <a href="#">Create an account</a></p>
             </form>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $('.message a').click(function(){
+            $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+        });
+    </script>
 </body>
 </html>

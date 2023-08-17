@@ -6,11 +6,8 @@
     box-sizing: border-box;
 }
 
-html {
-    height: 100%;
-}
-
 body {
+    height: 100vh;
     font-family: sans-serif;
     background: linear-gradient(#30142b, #2772a1);
     display: flex;
@@ -63,6 +60,10 @@ h2 {
 .form .message a {
     color: #289bb8;
     text-decoration: none;
+}
+
+.form .register-form {
+    display: none;
 }
 
 .btn {
@@ -168,10 +169,48 @@ h2 {
     }
 }
 
-.register-form {
-    display: none;
+div.soc-media div.connect {
+    color: #b3b3b3;
+    font-size: 1.1em;
+    margin-top: 1em;
 }
 
-.magic{
-    display: none;
+div.soc-media a.facebook {
+    background: #3a589a;
+    margin-top: 0.8em;
+    -moz-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+}
+
+div.soc-media a.google {
+    background: #d1231a;
+    -moz-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+}
+
+div.soc-media a.github {
+    background: #000000;
+    -moz-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+}
+
+div.soc-media a {
+    display: inline-block;
+    font-size: 1em;
+    text-decoration: none;
+    color: white;
+    width: 4em;
+    padding: 0.55em 0.3em;
+    clear: both;
+    text-align: center;
+    margin: 0.5em 0.1em;
+    -moz-border-radius: 0.3em;
+    -webkit-border-radius: 0.3em;
+    border-radius: 0.3em;
 }
