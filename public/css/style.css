@@ -137,6 +137,7 @@ nav a:hover {
 #menu-toggle:checked + .menu-button-container .menu-button::after {
     margin-top: 0px;
     transform: rotate(-405deg);
+}
   
 li .list-arrow {
     display: none;
