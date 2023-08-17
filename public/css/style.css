@@ -255,6 +255,12 @@ button:hover {
     transition-duration: 0.4s;
 }
 
+.products h2{
+    margin-top: 20px;
+    font-size: 2em;
+    text-align: center;
+}
+
 #review {
     display: flex;
     align-items: center;
@@ -342,6 +348,10 @@ footer {
 
 @media (max-width: 700px) {
 
+    .wallpaper h1 {
+        font-size: 3em;
+    }
+
     .mobile-icon {
         display: inline-block;
     }
@@ -428,6 +438,7 @@ footer {
         text-align: center;
       }
 
+
       .mobile-overlay h2{
         margin-bottom: 20px;
       }
@@ -439,6 +450,10 @@ footer {
       .mobile-overlay button {
         height: 35px;
         width: 150px;
+      }
+
+      #review {
+          text-align: center;
       }
 
       #assistantImage {
