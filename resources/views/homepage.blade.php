@@ -106,12 +106,16 @@
             <p>Free shipping from €50,-</p>
         </div>
         <div class="featured-image">
+            <div class="featured-plant-text">
+                <h2>Plant of the month</h2>
+                <h2>Anthurium Warocqueanum</h2>
+            </div>
             <img src="{{ URL::asset('images/featured-image.jpg') }}" alt="">
-        <div>
+        </div>
         <div id="review">
             <p><b>Magesgreens.com</b> is rated <b>excellent</b> by our customers.</p>
         </div>
-        <div class='sk-ww-google-reviews' data-embed-id='181499'></div><script src='https://widgets.sociablekit.com/google-reviews/widget.js' async defer></script>        
+        <div class='sk-ww-google-reviews reviews-list' data-embed-id='181499'></div><script src='https://widgets.sociablekit.com/google-reviews/widget.js' async defer></script>        
         <div class="assistant">
             <div id="assistantImage">
                 <img src="{{ URL::asset('assets/assistant.jpg') }}" alt="">
@@ -125,7 +129,7 @@
     <footer class="myFooter">
         <div class="footer-content">
             <div class="logo">
-                <img src="" alt="Logo">
+                <img src="assets/logo.svg" alt="Logo">
             </div>
             <div class="footer-links">
                 <div class="footer-column">
