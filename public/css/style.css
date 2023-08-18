@@ -142,7 +142,7 @@ nav a:hover {
     margin-top: 0px;
     transform: rotate(-405deg);
 }
-  
+
 li .list-arrow {
     display: none;
 }
@@ -152,10 +152,10 @@ li .list-arrow {
 }
 
 .hwrap {
-    overflow: hidden; 
+    overflow: hidden;
     background: #eee;
 }
-  
+
 .hitem {
     display: flex;
     flex-shrink: 0;
@@ -187,7 +187,7 @@ strong {
 .mobile-icon {
     display: none;
 }
-   
+
 
 .wallpaper {
     width: 100%;
@@ -365,6 +365,7 @@ button:hover {
 .footer-links {
     display: flex;
     justify-content: space-between;
+    width: 60%;
 }
 
 .footer-column {
@@ -445,6 +446,9 @@ div.soc-media a {
     border-radius: 50%;
 }
 
+.footer-links-mobile {
+    display: none;
+}
 
 /* Mobile */
 
@@ -486,7 +490,7 @@ div.soc-media a {
     .nav-text {
         margin-left: 10px;
     }
-  
+
     .menu-button-container {
       display: flex;
     }
@@ -539,7 +543,7 @@ div.soc-media a {
         color: var(--color4);
         padding-left: 1em;
       }
-    
+
       li .list-arrow {
         display: inline;
         width: 20px;
@@ -649,5 +653,84 @@ div.soc-media a {
         display: none;
       }
 
-  }
+    /* Footer */
 
+
+
+    .footer-links {
+        display: none;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo img {
+        max-width: 120px;
+    }
+
+    .footer-links-mobile {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        flex-direction: column;
+        margin: 20px 0;
+        border-top: 1px solid black;
+    }
+
+    .footer-column-mobile {
+        padding: 5px 0;
+        font-size: 16px;
+        border-bottom: 1px solid black;
+    }
+
+    .footer-column-mobile-login {
+        font-size: 18px;
+        border-bottom: 1px solid black;
+        text-align: center;
+    }
+
+    .footer-column-mobile-login a {
+        text-decoration: none;
+        color: #1B2A3A;
+        display: block;
+        margin: 8px 0;
+    }
+
+    .footer-column-mobile h3 {
+        display: block;
+        margin-left: 10px;
+    }
+
+    .footer-col-mob-plus {
+        position: absolute;
+        right: 15px;
+    }
+
+    .footer-column-mobile a {
+        text-decoration: none;
+        color: #1B2A3A;
+        display: block;
+        margin: 8px 0;
+        margin-left: 20px;
+    }
+
+    .soc-media a:hover {
+        transform: none;
+    }
+
+    .footer-column-mobile a {
+        display: none;
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .footer-column-mobile.show a {
+        display: block;
+        opacity: 1;
+        transform: scaleY(1);
+    }
+  }
