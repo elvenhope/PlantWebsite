@@ -199,6 +199,8 @@ strong {
     display: flex;
 }
 
+
+
 .text-wrapper {
     background-color: rgba(255, 255, 255, 0.5);
     margin-right: 20px;
@@ -262,11 +264,27 @@ button:hover {
     transition-duration: 0.4s;
 }
 
+.featured-wallpaper {
+    width: 90%;
+    height: 500px;
+    background-image: url("/assets/bonsai.jpg");
+    background-position: 50% 40%;
+    background-size:cover;
+    color: black;
+    align-items: end;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    margin-bottom: 30px;
+}
+
 .products h2{
     margin-top: 20px;
     font-size: 2em;
     text-align: center;
 }
+
+
 
 #review {
     display: flex;
