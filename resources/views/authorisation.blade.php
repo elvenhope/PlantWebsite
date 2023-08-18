@@ -16,10 +16,10 @@
         <div class="form">
             <form class="register-form" method="post">
                 <h2>Register</h2>
-                <input type="text" placeholder="Full Name *" required/>
-                <input type="text" placeholder="Username *" required/>
-                <input type="email" placeholder="Email *" required/>
-                <input type="password" placeholder="Password *" required/>
+                <input type="text" placeholder="Full Name" required/>
+                <input type="text" placeholder="Username" required/>
+                <input type="email" placeholder="Email" required/>
+                <input type="password" placeholder="Password" required/>
                 <a class="btn" href="#">
                 <span></span>
                     <span></span>
@@ -43,8 +43,8 @@
             </form>
             <form class="login-form" method="post">
                 <h2>Login</h2>
-                <input type="text" placeholder="Username *" required/>
-                <input type="password" placeholder="Password *" required/>
+                <input type="text" placeholder="Username" required/>
+                <input type="password" placeholder="Password" required/>
                 <a class="btn" href="#">
                     <span></span>
                     <span></span>
