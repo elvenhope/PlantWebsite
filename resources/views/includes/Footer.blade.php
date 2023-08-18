@@ -1,7 +1,6 @@
-<footer class="myFooter">
-        <div class="footer-content">
+     <div class="footer-content">
             <div class="logo">
-                <img src="{{ URL::asset('') }}" alt="Logo">
+                <img src="{{ URL::asset('assets/logo.svg') }}" alt="Logo">
             </div>
             <div class="footer-links">
                 <div class="footer-column">
@@ -71,4 +70,3 @@
                 </a>
             </div>
         </div>
-    </footer>

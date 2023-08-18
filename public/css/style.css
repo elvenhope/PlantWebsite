@@ -329,7 +329,7 @@ button:hover {
 
 #assistantImage {
     margin-right: 80px;
-    
+
 }
 
 
@@ -405,6 +405,7 @@ div.soc-media {
     color: #b3b3b3;
     font-size: 0.9em;
     text-align: center;
+    margin-right: 20px;
 }
 
 div.soc-media a.facebook {
@@ -465,7 +466,7 @@ div.soc-media a {
     p {
         font-size: 0.8em;
     }
-    
+
     .wallpaper h1 {
         font-size: 3em;
     }
@@ -621,7 +622,7 @@ div.soc-media a {
       }
 
       /* Footer */
-      
+
       .footer-content {
         align-items: center;
         justify-content: center;
@@ -645,18 +646,6 @@ div.soc-media a {
         padding-right: 10px;
       }
 
-      .footer-content .logo {
-        display: none;
-      }
-
-      .soc-media {
-        display: none;
-      }
-
-    /* Footer */
-
-
-
     .footer-links {
         display: none;
     }
@@ -668,6 +657,14 @@ div.soc-media a {
 
     .logo img {
         max-width: 120px;
+    }
+
+    .logo {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0;
+        width: 100%;
     }
 
     .footer-links-mobile {
@@ -716,9 +713,14 @@ div.soc-media a {
         margin-left: 20px;
     }
 
+    div.soc-media {
+        margin-right: 0;
+    }
+
     .soc-media a:hover {
         transform: none;
     }
+
 
     .footer-column-mobile a {
         display: none;
