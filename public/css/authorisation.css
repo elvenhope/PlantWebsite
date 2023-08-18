@@ -9,7 +9,7 @@
 body {
     height: 100vh;
     font-family: sans-serif;
-    background: linear-gradient(#30142b, #2772a1);
+    background: linear-gradient(#9affb2, #28b30d);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,14 +47,33 @@ body {
     background: transparent;
 }
 
+.form input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(255, 255, 255);
+  opacity: 0.7; /* Firefox */
+  font-weight: bold;
+}
+
+.form input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgb(255, 255, 255);
+  opacity: 0.7;
+  font-weight: bold;
+}
+
+.form input::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgb(255, 255, 255);
+  opacity: 0.7;
+  font-weight: bold;
+}
+
 h2 {
     color: #fff;
 }
 
 .form .message {
     margin: 15px 0 0;
-    color: #b3b3b3;
-    font-size: 12px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .form .message a {
@@ -70,7 +89,7 @@ h2 {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    color: #289bb8;
+    color: #09e62d;
     font-size: 16px;
     text-decoration: none;
     overflow: hidden;
@@ -80,13 +99,13 @@ h2 {
 }
 
 .btn:hover {
-    background-color: #289bb8;
+    background-color: #21c16e;
     color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 5px #289bb8,
-                0 0 25px #289bb8,
-                0 0 50px #289bb8,
-                0 0 100px #289bb8;
+    box-shadow: 0 0 5px #21c16e,
+                0 0 25px #21c16e,
+                0 0 50px #21c16e,
+                0 0 100px #21c16e;
 }
 
 .btn span {
@@ -99,8 +118,8 @@ h2 {
     left: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #289bb8);
-    animation: btn-anim1 1s linear infinite;
+    background: linear-gradient(90deg, transparent, #21c16e);
+    animation: btn-anim1 2s linear infinite;
 }
 
 @keyframes btn-anim1 {
@@ -117,9 +136,9 @@ h2 {
     right: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(180deg, transparent, #289bb8);
-    animation: btn-anim2 1s linear infinite;
-    animation-delay: .25s;
+    background: linear-gradient(180deg, transparent, #21c16e);
+    animation: btn-anim2 2s linear infinite;
+    animation-delay: .50s;
 }
 
 @keyframes btn-anim2 {
@@ -136,9 +155,9 @@ h2 {
     right: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(270deg, transparent, #289bb8);
-    animation: btn-anim3 1s linear infinite;
-    animation-delay: .5s;
+    background: linear-gradient(270deg, transparent, #21c16e);
+    animation: btn-anim3 2s linear infinite;
+    animation-delay: 1s;
 }
 
 @keyframes btn-anim3 {
@@ -155,9 +174,9 @@ h2 {
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(360deg, transparent, #289bb8);
-    animation: btn-anim4 1s linear infinite;
-    animation-delay: .75s;
+    background: linear-gradient(360deg, transparent, #21c16e);
+    animation: btn-anim4 2s linear infinite;
+    animation-delay: 1.5s;
 }
 
 @keyframes btn-anim4 {
@@ -170,9 +189,10 @@ h2 {
 }
 
 div.soc-media div.connect {
-    color: #b3b3b3;
-    font-size: 1.1em;
+    color: #ffffff;
+    font-size: 1.4em;
     margin-top: 1em;
+    font-weight: bold;
 }
 
 .soc-media a:hover {
