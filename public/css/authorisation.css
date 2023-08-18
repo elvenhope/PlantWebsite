@@ -9,7 +9,10 @@
 body {
     height: 100vh;
     font-family: sans-serif;
-    background: linear-gradient(#9affb2, #28b30d);
+    /* background: linear-gradient(75.7deg, rgb(34, 126, 34) 3.8%, rgb(99, 162, 17) 87.1%); */
+    background-image: url("/assets/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,7 +33,7 @@ body {
     transform: translate(-50%, -50%);
     width: 400px;
     padding: 40px;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .7);
     box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
     border-radius: 10px;
 }
@@ -45,6 +48,7 @@ body {
     border-bottom: 1px solid #fff;
     outline: none;
     background: transparent;
+    font-weight: bold;
 }
 
 .form input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -89,7 +93,7 @@ h2 {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    color: #09e62d;
+    color: #e3c257;
     font-size: 16px;
     text-decoration: none;
     overflow: hidden;
@@ -99,13 +103,13 @@ h2 {
 }
 
 .btn:hover {
-    background-color: #21c16e;
+    background-color: #e3c257;
     color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 5px #21c16e,
-                0 0 25px #21c16e,
-                0 0 50px #21c16e,
-                0 0 100px #21c16e;
+    box-shadow: 0 0 5px #e3c257,
+                0 0 25px #e3c257,
+                0 0 50px #e3c257,
+                0 0 100px #e3c257;
 }
 
 .btn span {
@@ -118,7 +122,7 @@ h2 {
     left: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #21c16e);
+    background: linear-gradient(90deg, transparent, #e3c257);
     animation: btn-anim1 2s linear infinite;
 }
 
@@ -136,7 +140,7 @@ h2 {
     right: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(180deg, transparent, #21c16e);
+    background: linear-gradient(180deg, transparent, #e3c257);
     animation: btn-anim2 2s linear infinite;
     animation-delay: .50s;
 }
@@ -155,7 +159,7 @@ h2 {
     right: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(270deg, transparent, #21c16e);
+    background: linear-gradient(270deg, transparent, #e3c257);
     animation: btn-anim3 2s linear infinite;
     animation-delay: 1s;
 }
@@ -174,7 +178,7 @@ h2 {
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(360deg, transparent, #21c16e);
+    background: linear-gradient(360deg, transparent, #e3c257);
     animation: btn-anim4 2s linear infinite;
     animation-delay: 1.5s;
 }
@@ -237,4 +241,11 @@ div.soc-media a {
     -moz-border-radius: 0.3em;
     -webkit-border-radius: 0.3em;
     border-radius: 0.3em;
+}
+
+
+@media (max-width: 400px) {
+    .form {
+        width: 100%;
+    }
 }
