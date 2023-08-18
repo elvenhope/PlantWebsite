@@ -14,18 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('homepage');
+    return view('pages.home');
 });
 
 Route::get('plants', function(){
-    return view('plants');
+    return view('pages.plants');
 });
 
 Route::get('product', function(){
-    return view('product');
+    return view('pages.product');
 });
 
 
 Route::get('authorisation', function(){
-    return view('authorisation');
+    return view('pages.authorisation');
 });
