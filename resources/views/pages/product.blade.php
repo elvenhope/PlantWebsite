@@ -49,7 +49,7 @@ Product
 
 <div class="container">
     <div class="product__details">
-        <p class="product__details-name"> Thai Constellation </p>
+        <p class="product__details-name"> Th ai Constellation </p>
         <div class="product__details-price">
             <div class="product__detail-price-box">
                 <span> Price : € </span>
