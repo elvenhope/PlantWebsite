@@ -17,6 +17,14 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    z-index: 9999;
+}
+
 /* Normalizing */
 
 body {
@@ -575,6 +583,11 @@ div.soc-media a {
       background-color: white;
     }
 
+    nav a:hover {
+        color: var(--color4);
+        box-shadow: none;
+    }
+
     li a {
         color: var(--color4);
         padding-left: 1em;
@@ -732,7 +745,7 @@ div.soc-media a {
 
     .footer-column-mobile {
         padding: 5px 0;
-        font-size: 16px;
+        font-size: 0.8em;
         border-bottom: 1px solid black;
     }
 
