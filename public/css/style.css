@@ -36,6 +36,8 @@ p {
 
 /* Styling */
 
+/* Header */
+
 .logo {
     width: 50px;
     white-space: nowrap;
@@ -188,6 +190,7 @@ strong {
     display: none;
 }
 
+/* Main wallpaper */
 
 .wallpaper {
     width: 100%;
@@ -199,8 +202,6 @@ strong {
     align-items: end;
     display: flex;
 }
-
-
 
 .text-wrapper {
     background-color: rgba(255, 255, 255, 0.7);
@@ -265,19 +266,7 @@ button:hover {
     transition-duration: 0.4s;
 }
 
-.featured-wallpaper {
-    width: 90%;
-    height: 500px;
-    background-image: url("/assets/bonsai.jpg");
-    background-position: 50% 40%;
-    background-size:cover;
-    color: black;
-    align-items: end;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    margin-bottom: 30px;
-}
+/* Product section */
 
 .products h2{
     margin-top: 20px;
@@ -285,6 +274,53 @@ button:hover {
     text-align: center;
     font-family: proxima-nova, sans-serif;
 }
+
+/* Featured plant section*/
+
+.featured-wallpaper {
+    width: 90%;
+    height: 500px;
+    background-image: url("/assets/featured.jpg");
+    background-position: 50% 90%;
+    background-size:cover;
+    color: black;
+    align-items: baseline;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.featured-plant-text {
+    margin: 20px 40px 20px 40px;
+    font-size: 2em;
+}
+
+.featured-plant-text h2{
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.featured-plant-text h2:first-of-type{
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+}
+
+.featured-plant-text h2:last-of-type {
+    background-color: rgba(0,0,0, 0.7);
+    color: white;
+    transition-duration: 0.4s;
+}
+
+.featured-plant-text h2:last-of-type:hover {
+    background-color: rgba(227, 194, 87, 0.8);
+    color: white;
+    transition-duration: 0.4s;
+}
+
+/* Review section */
 
 #review {
     display: flex;
@@ -302,6 +338,7 @@ button:hover {
     font-family: proxima-nova,sans-serif;
 }
 
+/* Assistant section */
 
 .assistant {
     display: grid;
@@ -331,7 +368,6 @@ button:hover {
 
 }
 
-
 .assistant button{
     width: 170px;
     height: 40px;
@@ -339,6 +375,7 @@ button:hover {
 }
 
 /* Footer */
+
 .footer-column h3,a{
     font-family: proxima-nova,sans-serif;
 }
@@ -538,7 +575,6 @@ div.soc-media a {
       background-color: white;
     }
 
-
     li a {
         color: var(--color4);
         padding-left: 1em;
@@ -552,9 +588,11 @@ div.soc-media a {
         margin-left: auto;
         margin-right: 12px;
       }
+
       .overlay {
         display: none;
       }
+
       .mobile-overlay{
         display: block;
         background-color:rgba(227, 194, 87, 1);
@@ -576,13 +614,33 @@ div.soc-media a {
         width: 150px;
       }
 
+      /* Products */
+
       .products h2 {
         font-size: 1.5em;
       }
 
+      /* Featured wallpaper */
+
+      .featured-wallpaper {
+        height: 400px;
+        width: 100%;
+        align-items: baseline;
+      }
+
+      .featured-plant-text {
+        margin-top: 20px;
+        margin-left: 20px;
+        font-size: 1.3em;
+      }
+
+      /* Review */
+
       #review {
           text-align: center;
       }
+
+      /* Assistant */
 
       #assistantImage {
         display: flex;
