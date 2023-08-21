@@ -283,9 +283,8 @@ button:hover {
     margin-top: 20px;
     font-size: 2em;
     text-align: center;
+    font-family: proxima-nova, sans-serif;
 }
-
-
 
 #review {
     display: flex;
@@ -581,10 +580,6 @@ div.soc-media a {
         font-size: 1.5em;
       }
 
-      .featured-plant-text {
-        width: 100%;
-      }
-
       #review {
           text-align: center;
       }
@@ -674,12 +669,17 @@ div.soc-media a {
         flex-direction: column;
         margin: 20px 0;
         border-top: 1px solid black;
+        font-family: proxima-nova,sans-serif;
     }
 
     .footer-column-mobile {
         padding: 5px 0;
         font-size: 16px;
         border-bottom: 1px solid black;
+    }
+
+    .footer-column-mobile h3 {
+        font-family: proxima-nova,sans-serif;
     }
 
     .footer-column-mobile-login {
