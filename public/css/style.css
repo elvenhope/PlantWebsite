@@ -364,6 +364,18 @@ button:hover {
     margin-bottom: 20px;
 }
 
+#assistantCall {
+    font-family: proxima-nova,sans-serif;
+    font-size: 1.2em;
+    display: none;
+}
+
+#assistantCall b {
+    background-color: white;
+    color: rgba(227, 194, 87, 0.8);
+    font-family: proxima-nova,sans-serif;
+}
+
 .assistant img {
     border-radius: 50%;
     width: 180px;
