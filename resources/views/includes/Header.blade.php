@@ -15,14 +15,14 @@
                 </a>
                 <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
             <li>
-                <a href="#">
+                <a href="#assistant">
                     <i class="fa-regular fa-address-book mobile-icon" style="color: #434447;"></i>
                     <span class="nav-text">Contacts<span>
                 </a>
                 <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
             </li>
             <li>
-                <a href="#">
+                <a href="/authorisation">
                     <i class="fa-solid fa-right-to-bracket mobile-icon" style="color: #434447;"></i>
                     <span class="nav-text">Log In<span>
                 </a>

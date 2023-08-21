@@ -60,16 +60,15 @@ Mage's Greens
 <div id="review">
     <p><b>Magesgreens.com</b> is rated <b>excellent</b> by our customers.</p>
 </div>
-<div class='sk-ww-google-reviews reviews-list' data-embed-id='181499'></div>
-<script src='https://widgets.sociablekit.com/google-reviews/widget.js' async defer></script>
-<div class="assistant">
-    <div id="assistantImage">
-        <img src="{{ URL::asset('assets/assistant.jpg') }}" alt="">
-    </div>
-    <div id="assistantGreet">
-        <h2 id="assistantText">Hi, I'm Alex, your Mage's Greens guide!</h2>
-        <button>Can I help you?</button>
-    </div>
+<div class='sk-ww-google-reviews reviews-list' data-embed-id='181499'></div><script src='https://widgets.sociablekit.com/google-reviews/widget.js' async defer></script>
+<div class="assistant" id="assistant">
+<div id="assistantImage">
+    <img src="{{ URL::asset('assets/assistant.jpg') }}" alt="">
+</div>
+<div id="assistantGreet">
+    <h2 id="assistantText">Hi, I'm Alex, your Mage's Greens guide!</h2>
+    <button>Can I help you?</button>
+</div>
 </div>
 
 @stop
