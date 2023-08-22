@@ -89,6 +89,20 @@ h2 {
     display: none;
 }
 
+.rememberMe {
+    display: flex;
+    justify-content: flex-start;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+    align-items: flex-start;
+}
+
+.rememberMe input {
+    width: auto;
+    margin-right: 10px;
+}
+
 .btn {
     position: relative;
     display: inline-block;
@@ -194,6 +208,21 @@ h2 {
     50%,100% {
         bottom: 100%;
     }
+}
+
+.errorList {
+    color: #e3c257;
+    font-size:13px;
+}
+
+.errorList li {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.error {
+    font-weight: bold;
+    color: #e3c257;
 }
 
 div.soc-media div.connect {
