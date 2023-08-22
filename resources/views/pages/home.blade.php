@@ -57,7 +57,6 @@ Mage's Greens
 <div class="shipping-notice">
     <img src="{{ URL::asset('images/shipping-notice.png') }}" alt="">
     <p>Free shipping from €50,-</p>
-
 </div>
 <div class="featured-wallpaper">
     <div class="featured-plant-text">

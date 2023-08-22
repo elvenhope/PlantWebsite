@@ -230,9 +230,12 @@ strong {
     flex-direction: column;
     justify-content: center;
     text-align: left;
+    transform: scaleY(1.1);
+    transform-origin: center top;
 }
 
 .overlay h2,p,button {
+    transform: scaleY(0.9);
     margin-bottom: 20px;
 }
 
@@ -277,8 +280,8 @@ button:hover {
 /* Product section */
 
 #products-head{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     font-size: 2em;
     text-align: center;
     font-family: proxima-nova, sans-serif;
@@ -313,6 +316,13 @@ button:hover {
 
 .card-image {
     height: 30%;
+    transition-duration: 0.2s;
+    border-radius: 15px;
+}
+
+.card-image:hover {
+    transform: scale(1.05);
+    transform-origin: center top;
 }
 
 .card h3,p {
