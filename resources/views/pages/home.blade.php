@@ -2,7 +2,7 @@
 
 
 @section('pageTitle')
-Mage's Greens
+Mage's Greens  🌿
 @stop
 
 
@@ -18,14 +18,14 @@ Mage's Greens
 <div class="wallpaper">
     <h1 class="text-wrapper">touching the<br>hearts of<br>all plants</h1>
     <div class="overlay">
-        <h2>Summer sale</h2>
-        <p>Elevate your plant care game this summer with PLNTS, <br>your ultimate resource for all things green and vibrant!</p>
-        <button>Let's go</button>
+            <h2 id="summerHead">Summer sale</h2>
+            <p id="summerText">Elevate your plant care game this summer with Mage's greens, <br>your ultimate resource for all things green and vibrant!</p>
+            <button id="summerButton">Let's go</button>
     </div>
 </div>
 <div class="mobile-overlay">
     <h2>Summer sale</h2>
-    <p>Elevate your plant care game this summer with PLNTS, <br>your ultimate resource for all things green and vibrant!</p>
+    <p>Elevate your plant care game this summer with Mage's greens, <br>your ultimate resource for all things green and vibrant!</p>
     <button>Let's go</button>
 </div>
 <h2 id="products-head">Featured product list</h2>
@@ -42,7 +42,7 @@ Mage's Greens
                     <h3>{{ $product->name }}</h3>
                     <p>{{ $product->description }}</p>
                     <p>Price: <b>{{ $product->price }}€</b> <s>35.99€</s></p>
-                    <a href="{{ route('add.to.cart', $product->id) }}"><button>Add to cart</button></a>
+                    <a href="{{ route('add.to.cart', $product->id) }}"><button><strong>ADD TO CART</strong></button></a>
                 </div>
 
                 @php $count++ @endphp
@@ -55,8 +55,14 @@ Mage's Greens
 </div>
 
 <div class="shipping-notice">
-    <img src="{{ URL::asset('images/shipping-notice.png') }}" alt="">
-    <p>Free shipping from €50,-</p>
+    <div>
+        <i class="fa fa-solid fa-truck-fast"></i>
+        <span class="shippingFree">Free <strong>shipping</strong> from <strong>€50,-</strong></span>
+    </div>
+    <div>
+        <i class="fa-solid fa-shield-heart"></i>
+        <span>30 days Mage's <strong>health guarantee</strong></span>
+    </div>
 </div>
 <div class="featured-wallpaper">
     <div class="featured-plant-text">

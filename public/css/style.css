@@ -247,9 +247,14 @@ strong {
 }
 
 .overlay h2,p,button {
-    transform: scaleY(0.9);
     margin-bottom: 20px;
 }
+
+#summerHead, #summerText, #summerButton {
+    transform: scaleY(0.9);
+}
+
+
 
 .overlay h2 {
     font-size: 33px;
@@ -381,7 +386,42 @@ button:hover {
     height: auto;
 }
 
+/* Shipping notice */
 
+.shipping-notice {
+    display: flex;
+    align-items: center;
+    background-color: #ccc;
+    height: 90px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shipping-notice div {
+    width: 100%;
+    text-align: center;
+}
+
+.shipping-notice span {
+    font-family: proxima-nova, sans-serif;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.shipping-notice span:first-of-type {
+    margin-left: 15px;
+}
+
+.shipping-notice i {
+    font-size: 1.8em;
+
+}
+
+.shipping-notice span {
+    font-size: 2em;
+    margin-bottom: 0;
+}
 
 /* Featured plant section*/
 
@@ -397,7 +437,7 @@ button:hover {
     margin-right: auto;
     display: flex;
     margin-bottom: 30px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .featured-plant-text {
@@ -758,6 +798,21 @@ div.soc-media a {
         grid-template-columns: 1fr;
         gap: 10px;
         margin-bottom: 0;
+      }
+
+      /* Free shipping */
+
+      .shipping-notice div:last-of-type {
+        display: none;
+      }
+
+      .shipping-notice {
+        width: 100%;
+        font-size: 0.6em;
+      }
+
+      .shipping-notice span {
+        margin-right: 15px;
       }
 
       /* Featured wallpaper */
