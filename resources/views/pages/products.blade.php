@@ -28,9 +28,9 @@
         @foreach ($products as $product)
             <div class="col">
                 <div class="thumbnail">
-                    <a href="/plant/{{ $product->id }}"><img src="{{ $product->imgLink }}" alt='product image'></a>
+                    <a href="/product/{{ $product->id }}"><img src="{{ $product->imgLink }}" alt='product image'></a>
                     <div class="caption">
-                        <a href="/plant/{{ $product->id }}">
+                        <a href="/product/{{ $product->id }}">
                             <h4>{{ $product->name }}</h4>
                         </a>
                         <p>{{ $product->description }}</p>
