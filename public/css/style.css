@@ -157,6 +157,17 @@ li .list-arrow {
     display: none;
 }
 
+.logOutbtn {
+    cursor: pointer;
+    transition: color .4s ease-in-out, box-shadow .4s ease-in-out;
+    box-shadow: inset 0 0 0 0 var(--color5);
+}
+
+.logOutbtn:hover {
+    color: white;
+    box-shadow: inset 200px 0 0 0 var(--color5);
+}
+
 .mobile-overlay {
     display:none;
 }
