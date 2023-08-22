@@ -276,12 +276,90 @@ button:hover {
 
 /* Product section */
 
-.products h2{
+#products-head{
     margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 2em;
     text-align: center;
     font-family: proxima-nova, sans-serif;
 }
+
+.products {
+    display: flex;
+    justify-content: center;
+}
+
+.grid-container {
+    max-width: 60%; 
+    margin: 0 auto;
+}
+
+.grid-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 100%;
+    height: auto;
+    padding: 10px 20px 5px 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background: rgba(204, 204, 204, 0.1);
+}
+
+.card-image {
+    height: 30%;
+}
+
+.card h3,p {
+    font-family: proxima-nova, sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.card h3 {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.card button {
+    font-size: 0.8em;
+    height: 6%;
+    width: 100%;
+    color: black;
+    background: white;
+    border: 1px solid #ccc;
+}
+
+.card b {
+    font-family: proxima-nova, sans-serif;
+    font-size: 1.2em;
+}
+
+.card s {
+    margin-left: 10px;
+    font-family: proxima-nova, sans-serif;
+    color: #ccc;
+}
+
+.card button:hover{
+    color: white;
+    background: var(--color7)
+}
+
+.card-image {
+    max-width: 100%;
+    height: auto;
+}
+
+
 
 /* Featured plant section*/
 
@@ -641,8 +719,23 @@ div.soc-media a {
 
       /* Products */
 
-      .products h2 {
+      #products-head{
         font-size: 1.5em;
+      }
+
+      .grid-container {
+        gap: 10px;
+      }
+
+      .card {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .grid-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 0;
       }
 
       /* Featured wallpaper */
