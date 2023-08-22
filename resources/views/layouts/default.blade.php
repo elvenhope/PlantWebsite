@@ -53,6 +53,8 @@
     <footer class="myFooter">
         @include('includes.Footer')
     </footer>
+
+    @yield('scripts')
 </body>
 
 </html>

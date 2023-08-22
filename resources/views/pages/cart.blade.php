@@ -1,5 +1,13 @@
-@extends('layouts.products')
-  
+@extends("layouts.default")
+
+@section("pageTitle")
+Plants
+@stop
+
+@section("PageSpecificPropertiesInTheHead")
+<link rel="stylesheet" href="{{ URL::asset('css/cart.css') }}">
+@stop
+
 @section('content')
 <table id="cart" class="table table-hover table-condensed">
     <thead>
@@ -43,28 +51,30 @@
         </tr>
         <tr>
             <td colspan="5" class="text-right">
-                <a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
+                <a href="{{ url('/plants') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
                 <button class="btn btn-success">Checkout</button>
             </td>
         </tr>
     </tfoot>
 </table>
 @endsection
-  
+
 @section('scripts')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script type="text/javascript">
-  
+
     $(".update-cart").change(function (e) {
         e.preventDefault();
-  
+
         var ele = $(this);
-  
+
         $.ajax({
             url: '{{ route('update.cart') }}',
             method: "patch",
             data: {
-                _token: '{{ csrf_token() }}', 
-                id: ele.parents("tr").attr("data-id"), 
+                _token: '{{ csrf_token() }}',
+                id: ele.parents("tr").attr("data-id"),
                 quantity: ele.parents("tr").find(".quantity").val()
             },
             success: function (response) {
@@ -72,18 +82,18 @@
             }
         });
     });
-  
+
     $(".remove-from-cart").click(function (e) {
         e.preventDefault();
-  
+
         var ele = $(this);
-  
+
         if(confirm("Are you sure want to remove?")) {
             $.ajax({
                 url: '{{ route('remove.from.cart') }}',
                 method: "DELETE",
                 data: {
-                    _token: '{{ csrf_token() }}', 
+                    _token: '{{ csrf_token() }}',
                     id: ele.parents("tr").attr("data-id")
                 },
                 success: function (response) {
@@ -92,6 +102,6 @@
             });
         }
     });
-  
+
 </script>
 @endsection

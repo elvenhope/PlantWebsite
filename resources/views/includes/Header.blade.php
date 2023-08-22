@@ -29,7 +29,7 @@
                 <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
             </li>
             <li>
-                <a href="#">
+                <a href="{{ route('cart') }}">
                     <i class="fas fa-solid fa-sharp fa-light fa-cart-shopping mobile-icon" style="color: #434447;"></i>
                     <span class="nav-text">Cart<span>
                 </a>
