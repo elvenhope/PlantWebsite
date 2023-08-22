@@ -38,7 +38,7 @@ Route::get('authorisation', function(){
 products page (PLP)
 */
 
-Route::get('/', [ProductController::class, 'index']);  
+Route::get('plants', [ProductController::class, 'index']);
 Route::get('cart', [ProductController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('add.to.cart');
 Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');
