@@ -2,7 +2,7 @@
 
 
 @section('pageTitle')
-Mage's Greens
+Mage's Greens  🌿
 @stop
 
 

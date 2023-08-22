@@ -369,7 +369,16 @@ button:hover {
     height: auto;
 }
 
+/* Shipping notice */
 
+.shipping-notice {
+    background-color: #ccc;
+    height: 90px;
+}
+
+.shipping-notice p {
+    margin-bottom: 0;
+}
 
 /* Featured plant section*/
 
@@ -385,7 +394,7 @@ button:hover {
     margin-right: auto;
     display: flex;
     margin-bottom: 30px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .featured-plant-text {

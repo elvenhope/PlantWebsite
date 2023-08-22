@@ -1,7 +1,7 @@
 <nav>
     <div class="top-nav">
         <div>
-            <a href="/" class="logo"><b>Mage's Greens</b></a>
+            <a href="/" class="logo"><b>Mage's Greens  🌿</b></a>
         </div>
         <input id="menu-toggle" type="checkbox" />
         <label class='menu-button-container' for="menu-toggle">
