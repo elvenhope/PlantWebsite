@@ -1,7 +1,7 @@
 <nav>
     <div class="top-nav">
         <div>
-            <a href="/" class="logo"><b>Mage's Greens</b></a>
+            <a href="/" class="logo"><b>Mage's Greens  🌿</b></a>
         </div>
         <input id="menu-toggle" type="checkbox" />
         <label class='menu-button-container' for="menu-toggle">
@@ -21,11 +21,26 @@
                 </a>
                 <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
             </li>
+            @if(Route::has('login'))
+            @guest
             <li>
-                <a href="/authorisation">
+                <a href="{{ route('login') }}">
                     <i class="fa-solid fa-right-to-bracket mobile-icon" style="color: #434447;"></i>
                     <span class="nav-text">Log In<span>
                 </a>
+                <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
+            </li>
+            @endguest
+            @endif
+            @auth
+            <li>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <p class="logOutbtn" onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </p>
+                </form>
                 <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
             </li>
             <li>
@@ -35,6 +50,7 @@
                 </a>
                 <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
             </li>
+            @endauth
         </ul>
     </div>
 </nav>
