@@ -67,7 +67,8 @@ Mage's Greens
 </div>
 <div id="assistantGreet">
     <h2 id="assistantText">Hi, I'm Alex, your Mage's Greens guide!</h2>
-    <button>Can I help you?</button>
+    <p id="assistantCall">... or you can call us on <b>+371 25 000 666</b></p>
+    <button id="assistantButton" onclick="assistant()">Can I help you?</button>
 </div>
 </div>
 

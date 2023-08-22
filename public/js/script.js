@@ -5,7 +5,7 @@ function burgerMenu() {
     } else {
       x.style.display = "block";
     }
-  }
+}
 
 function myFunction1() {
     document.getElementById("myDropdown1").classList.toggle("show");
@@ -30,5 +30,18 @@ window.onclick = function(event) {
                 openDropdown.classList.remove('show');
             }
         }
+    }
+}
+
+
+function assistant() {
+    let heading = document.getElementById("assistantText");
+    let assistantCall = document.getElementById("assistantCall");
+    if (heading.innerText === "Hi, I'm Alex, your Mage's Greens guide!") {
+        heading.innerText = "Click the chat widget on the bottom right of the screen!";
+        assistantCall.style.display = "block";
+    } else {
+        heading.innerText = "Hi, I'm Alex, your Mage's Greens guide!";
+        assistantCall.style.display = "none";
     }
 }
