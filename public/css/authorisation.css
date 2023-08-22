@@ -101,6 +101,9 @@ h2 {
     margin-top: 15px;
     letter-spacing: 2px;
     font-weight: bold;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
