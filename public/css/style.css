@@ -166,6 +166,7 @@ li .list-arrow {
 .logOutbtn:hover {
     color: white;
     box-shadow: inset 200px 0 0 0 var(--color5);
+    margin: 0;
 }
 
 .mobile-overlay {
@@ -304,7 +305,7 @@ button:hover {
 }
 
 .grid-container {
-    max-width: 60%; 
+    max-width: 60%;
     margin: 0 auto;
 }
 
