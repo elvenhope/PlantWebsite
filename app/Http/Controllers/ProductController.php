@@ -8,7 +8,7 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-     /**
+    /**
      * Write code on Method
      *
      * @return response()
@@ -21,15 +21,15 @@ class ProductController extends Controller
 
 
     public function show($id)
-{
-    $product = Product::find($id);
+    {
+        $product = Product::find($id);
 
-    if ($product === null) {
-        abort(404);
+        if ($product === null) {
+            abort(404);
+        }
+
+        return view('pages/product', ['product' => $product]);
     }
-
-    return view('pages/product', ['product' => $product]);
-}
 
 
 
@@ -56,7 +56,7 @@ class ProductController extends Controller
 
         $cart = session()->get('cart', []);
 
-        if(isset($cart[$id])) {
+        if (isset($cart[$id])) {
             $cart[$id]['quantity'] += $quantity;
         } else {
             $cart[$id] = [
@@ -79,7 +79,7 @@ class ProductController extends Controller
      */
     public function update(Request $request)
     {
-        if($request->id && $request->quantity){
+        if ($request->id && $request->quantity) {
             $cart = session()->get('cart');
             $cart[$request->id]["quantity"] = $request->quantity;
             session()->put('cart', $cart);
@@ -97,19 +97,26 @@ class ProductController extends Controller
         if ($request->has('product_id')) {
             $product_id = $request->input('product_id');
             $cart = session()->get('cart');
-            if(isset($cart[$product_id])) {
+            if (isset($cart[$product_id])) {
                 unset($cart[$product_id]);
                 session()->put('cart', $cart);
             }
             session()->flash('success', 'Product removed successfully');
         }
-        if($request->id) {
+        if ($request->id) {
             $cart = session()->get('cart');
-            if(isset($cart[$request->id])) {
+            if (isset($cart[$request->id])) {
                 unset($cart[$request->id]);
                 session()->put('cart', $cart);
             }
             session()->flash('success', 'Product removed successfully');
         }
+    }
+
+
+    public function showBySpecies($species)
+    {
+        $products = Product::where('species', $species)->get();
+        return view('pages/products', compact('products'));
     }
 }
