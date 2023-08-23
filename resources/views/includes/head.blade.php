@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ URL::asset('css/sideCart.css') }}" />
 <script src="{{ asset('js/script.js') }}"></script>
 <title>@yield("pageTitle")</title>
 @yield("PageSpecificPropertiesInTheHead")

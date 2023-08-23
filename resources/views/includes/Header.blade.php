@@ -29,9 +29,9 @@
                 <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
             </li>
             <li>
-                <a href="{{ route('cart') }}">
+                <a href="#">
                     <i class="fas fa-solid fa-sharp fa-light fa-cart-shopping mobile-icon" style="color: #434447;"></i>
-                    <span class="nav-text">Cart<span>
+                    <span class="nav-text" id="open_cart_btn">Cart<span>
                 </a>
                 <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
             </li>

@@ -35,8 +35,7 @@
                         </a>
                         <p>{{ $product->description }}</p>
                         <p><strong>Price:</strong> ${{ $product->price }}</p>
-                        <p class="btn-holder"><a href="{{ route('add.to.cart', $product->id) }}" class="btn">Add to
-                                cart</a></p>
+                        <p class="btn-holder" id="open_cart_btn"><a href="{{ route('add.to.cart', $product->id) }}" class="btn">Add to cart</a></p>
                     </div>
                 </div>
             </div>

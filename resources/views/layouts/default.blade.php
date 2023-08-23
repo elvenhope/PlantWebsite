@@ -54,6 +54,9 @@
         @include('includes.Footer')
     </footer>
 
+    <section class="sideCart">
+        @include('includes.sideCart')
+    </section>
     @yield('scripts')
 </body>
 
