@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
@@ -39,5 +40,7 @@ product page (PDP)s
 */
 Route::get('/product/{id}', [ProductController::class, 'show']);
 Route::get('/add-to-cart/{id}/{quantity?}', [ProductController::class, 'addToCart']);
+
+Route::get('/search', [SearchController::class, "index"])->name('search');
 
 require __DIR__.'/auth.php';
