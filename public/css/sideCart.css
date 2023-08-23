@@ -29,6 +29,7 @@
     right: 0;
     height: 100vh;
     max-width: 350px;
+    min-width: 300px;
     background-color: #fff;
     box-shadow: -10px 0 15px rgba(0, 0, 0, 0.1);
     z-index: 10001;
@@ -216,6 +217,6 @@
     cursor: pointer;
 }
 
-.cart_actions button:nth-of-type(2) {
+a .btn1 {
     background-color: #069fe6;
 }

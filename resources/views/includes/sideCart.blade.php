@@ -46,8 +46,12 @@
                 <p>TOTAL:</p>
                 <p><span id="subtotal_price">$ {{ $total }}</span></p>
             </div>
-            <button class="cart_btn">View Cart</button>
-            <button class="cart_btn">Checkout</button>
+            <a href="/cart">
+                <button class="cart_btn btn1">View Cart</button>
+            </a>
+            <a href="#">
+                <button class="cart_btn">Checkout</button>
+            </a>
         </div>
     </div>
 </div>
@@ -125,139 +129,87 @@
     // });
 
     function setHeaders(headers){
-  for(let key in headers){
-    xhr.setRequestHeader(key, headers[key])
-  }
-}
-    // document.addEventListener("DOMContentLoaded", function () {
-    //     const removeButtons = document.querySelectorAll(".remove-from-cart");
+        for(let key in headers){
+            xhr.setRequestHeader(key, headers[key])
+        }
+    }
 
-    //     removeButtons.forEach(button => {
-    //         button.addEventListener("click", function (e) {
-    //             e.preventDefault();
-
-    //             if (confirm("Are you sure you want to delete?")) {
-    //                 const ele = e.currentTarget;
-    //                 const cartItem = ele.closest(".cart_item");
-    //                 const itemId = cartItem.dataset.itemId;
-
-    //                 const formData = new FormData();
-    //                 formData.append("id", itemId);
-
-    //                 const xhr = new XMLHttpRequest();
-    //                 xhr.open("DELETE", "{{ route('remove.from.cart') }}");
-    //                 const product_id = cartItem.dataset.value;
-    //                 console.log(product_id);
-    //                 setHeaders({"X-CSRF-TOKEN":"{{ csrf_token() }}","id": product_id});
-    //                 // xhr.setRequestHeader("X-CSRF-TOKEN", '{{ csrf_token() }}');
-    //                 xhr.onload = function () {
-    //                     if (xhr.status === 200) {
-    //                         cartItem.remove();
-    //                         updateCartTotal();
-    //                     } else {
-    //                         console.error("Error:", xhr.status, xhr.statusText);
-    //                     }
-    //                 };
-    //                 xhr.onerror = function () {
-    //                     console.error("Network error");
-    //                 };
-    //                 xhr.send(formData);
-    //             }
-    //         });
-    //     });
-    // });
     document.addEventListener("DOMContentLoaded", function () {
     const removeButtons = document.querySelectorAll(".remove-from-cart");
 
-    removeButtons.forEach(button => {
-        button.addEventListener("click", function (e) {
-            e.preventDefault();
-
-            if (confirm("Are you sure you want to delete?")) {
-                const ele = e.currentTarget;
-                const cartItem = ele.closest(".cart_item");
-                const productId = cartItem.dataset.value;
-
-                const xhr = new XMLHttpRequest();
-                xhr.open("DELETE", `{{ route('remove.from.cart') }}?product_id=${productId}`);
-                xhr.setRequestHeader("X-CSRF-TOKEN", '{{ csrf_token() }}');
-                xhr.onload = function () {
-                    if (xhr.status === 200) {
-                        cartItem.remove();
-                        updateCartTotal();
-                    } else {
-                        console.error("Error:", xhr.status, xhr.statusText);
-                    }
-                };
-                xhr.onerror = function () {
-                    console.error("Network error");
-                };
-                xhr.send();
-            }
-        });
-    });
-});
-
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const minusButtons = document.querySelectorAll(".update-cart-minus");
-        const plusButtons = document.querySelectorAll(".update-cart-plus");
-
-        minusButtons.forEach(button => {
+        removeButtons.forEach(button => {
             button.addEventListener("click", function (e) {
                 e.preventDefault();
-                const cartItem = button.closest(".cart_item");
-                const itemId = cartItem.dataset.itemId;
 
-                updateCartItem(itemId, -1, cartItem); // Вызов функции для обновления количества товара
-            });
-        });
+                if (confirm("Are you sure you want to delete?")) {
+                    const ele = e.currentTarget;
+                    const cartItem = ele.closest(".cart_item");
+                    const productId = cartItem.dataset.value;
 
-        plusButtons.forEach(button => {
-            button.addEventListener("click", function (e) {
-                e.preventDefault();
-                const cartItem = button.closest(".cart_item");
-                const itemId = cartItem.dataset.itemId;
-
-                updateCartItem(itemId, 1, cartItem); // Вызов функции для обновления количества товара
+                    const xhr = new XMLHttpRequest();
+                    xhr.open("DELETE", `{{ route('remove.from.cart') }}?product_id=${productId}`);
+                    xhr.setRequestHeader("X-CSRF-TOKEN", '{{ csrf_token() }}');
+                    xhr.onload = function () {
+                        if (xhr.status === 200) {
+                            cartItem.remove();
+                            updateCartTotal();
+                        } else {
+                            console.error("Error:", xhr.status, xhr.statusText);
+                        }
+                    };
+                    xhr.onerror = function () {
+                        console.error("Network error");
+                    };
+                    xhr.send();
+                }
             });
         });
     });
 
-    function updateCartItem(itemId, change, cartItem) {
-        const formData = new FormData();
-        formData.append("id", itemId);
-        formData.append("change", change);
+    $(".update-cart-minus").click(function (e) {
+        e.preventDefault();
 
-        const xhr = new XMLHttpRequest();
-        xhr.open("PATCH", "{{ route('update.cart') }}");
-        xhr.setRequestHeader("X-CSRF-TOKEN", '{{ csrf_token() }}');
-        xhr.onload = function () {
-            if (xhr.status === 200) {
-                const newValue = parseInt(cartItem.querySelector('.update-cart-value').textContent) + change;
-                cartItem.querySelector('.update-cart-value').textContent = newValue;
-                // Обработка успешного ответа, например, обновление подытога
-                // updateCartTotal(); // Ваша функция для обновления подытога
-            } else {
-                console.error("Произошла ошибка:", xhr.status, xhr.statusText);
+        var btn_minus = $(this).siblings('.update-cart-value');
+        var quantity = parseInt(btn_minus.text());
+
+        if (quantity > 1) {
+            quantity--;
+            updateCartItem($(this), quantity);
+        }
+    });
+
+    $(".update-cart-plus").click(function (e) {
+        e.preventDefault();
+
+        var btn_plus = $(this).siblings('.update-cart-value');
+        var quantity = parseInt(btn_plus.text());
+
+        quantity++;
+        updateCartItem($(this), quantity);
+    });
+
+    function updateCartItem(button, quantity) {
+        var cartItem = button.closest(".cart_item");
+        var productId = cartItem.data('value');
+
+        $.ajax({
+            url: "{{ route('update.cart') }}",
+            method: "patch",
+            data: {
+                _token: '{{ csrf_token() }}',
+                id: productId,
+                quantity: quantity
+            },
+            success: function (response) {
+                if (response.success) {
+                    cartItem.find('.update-cart-value').text(quantity);
+                    //updateCartTotal();
+                }
+            },
+            error: function (xhr) {
+                console.error("Error:", xhr.status, xhr.statusText);
             }
-        };
-        xhr.onerror = function () {
-            console.error("Произошла ошибка сети");
-        };
-        xhr.send(formData);
-    }
-
-    function updateCartTotal() {
-        const totalElements = document.querySelectorAll(".item_details-price");
-        let total = 0;
-
-        totalElements.forEach(element => {
-            total += parseFloat(element.textContent.replace("$", ""));
         });
-
-        const subtotalPriceElement = document.getElementById("subtotal_price");
-        subtotalPriceElement.textContent = "$ " + total.toFixed(2);
     }
 </script>
 @endsection
