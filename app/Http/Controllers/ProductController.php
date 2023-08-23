@@ -63,7 +63,8 @@ class ProductController extends Controller
                 "name" => $product->name,
                 "quantity" => $quantity,
                 "price" => $product->price,
-                "imgLink" => $product->imgLink
+                "imgLink" => $product->imgLink,
+                "product_id" => $product->id
             ];
         }
 
@@ -93,6 +94,15 @@ class ProductController extends Controller
      */
     public function remove(Request $request)
     {
+        if ($request->has('product_id')) {
+            $product_id = $request->input('product_id');
+            $cart = session()->get('cart');
+            if(isset($cart[$product_id])) {
+                unset($cart[$product_id]);
+                session()->put('cart', $cart);
+            }
+            session()->flash('success', 'Product removed successfully');
+        }
         if($request->id) {
             $cart = session()->get('cart');
             if(isset($cart[$request->id])) {
