@@ -13,7 +13,7 @@
 
 
     <br />
-    <div class="container">
+    <div class="products_success_container">
 
         @if (session('success'))
             <div class="alert alert-success">

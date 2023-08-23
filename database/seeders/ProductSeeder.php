@@ -17,21 +17,21 @@ class ProductSeeder extends Seeder
             [
                 'Name' => 'Adansonii Mint',
                 'Species' => 'Monstera',
-                'Description' => 'A popular indoor plant with large, violin-shaped leaves.',
+                'Description' => 'Monstera Adansonii Mint is a rare form of the Monstera Adansonii plant, which belongs to the Araceae family. This family of plants is known for their striking foliage, which often features intricate patterns and shapes. Monstera Adansonii Mint is no exception, with its minty green leaves that are deeply lobed and perforated.',
                 'ImgLink' => 'https://plnts.com/_next/image?url=https%3A%2F%2Fwebshop.plnts.com%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2Faa5d334f459227518b6c3cf7ea9d29ed%2Fp%2Fl%2Fpl.s.m.101-1.jpg&w=640&q=80',
                 'Price' => 24.99,
             ],
             [
                 'Name' => 'Warocqueanum',
                 'Species' => 'Anthurium',
-                'Description' => 'A hardy indoor plant with tall, sword-like leaves.',
+                'Description' => 'Anthurium warocqueanum or Queen Anthurium is a wonder to behold both in an indoor or an outdoor setting. Their velvety leaf blades have vibrant deep-green coloring. Such foliage is its main attraction. They go perfectly on a simple container pot or hanging basket but would demand extra care and attention.',
                 'ImgLink' => 'https://plnts.com/_next/image?url=https%3A%2F%2Fwebshop.plnts.com%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2Faa5d334f459227518b6c3cf7ea9d29ed%2Fp%2Fl%2Fpl.s.m.096-1.jpg&w=640&q=80',
                 'Price' => 19.99,
             ],
             [
                 'Name' => 'Rubber Plant',
                 'Species' => 'Ficus elastica',
-                'Description' => 'An indoor plant with large, glossy leaves.',
+                'Description' => 'Rubber plants (known scientifically as ficus elastica or ficus robusta) get their name from the milky white latex in their veins. The Mesoamerican people from way back in 1400BC used rubber plants as a key ingredient to make bouncy balls. In parts of India, people use their strong roots to make ‘living bridges’ over small rivers. But they’re best known today for being handsome houseplants with their silky sheen, creamy colours and air purifying qualities.',
                 'ImgLink' => 'https://plnts.com/_next/image?url=https%3A%2F%2Fwebshop.plnts.com%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2Faa5d334f459227518b6c3cf7ea9d29ed%2Fp%2Fl%2Fpl.s.b.085-thumbnail.jpg&w=640&q=80',
                 'Price' => 29.99,
             ],
@@ -45,7 +45,7 @@ class ProductSeeder extends Seeder
             [
                 'Name' => 'Spider Plant',
                 'Species' => 'Chlorophytum comosum',
-                'Description' => "An indoor plant with long, thin leaves that grow from a central rosette.",
+                'Description' => "Chlorophytum comosum, usually called spider plant or common spider plant due to its spider-like look, also known as spider ivy, ribbon plant. Chlorophytum comosum grows to about 60 cm (24 in) tall, although as a hanging plant it can descend many feet. It has fleshy, tuberous roots, each about 5–10 cm (2–4 in) long. The long narrow leaves reach a length of 20–45 cm (8–18 in) and are around 6–25 millimetres (0.2–1.0 in) wide.",
                 'ImgLink' => "https://plnts.com/_next/image?url=https%3A%2F%2Fwebshop.plnts.com%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2Faa5d334f459227518b6c3cf7ea9d29ed%2Fp%2Fl%2Fpl.s.b.067-thumbnail.jpg&w=640&q=80",
                 "Price" => 9.99
             ],

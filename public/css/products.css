@@ -1,28 +1,34 @@
 /* General placement */
+.products_container{
+    width: 90%;
+    margin: 0 auto;
+}
 
 .row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 10px;
-    margin: 0 100px 0 100px;
+    justify-items: center;
+    width: 85%;
+    margin: 0 auto;
 }
 .col {
     display: flex;
     flex-direction: column;
-    max-width: 280px;   
+    max-width: 280px;
 }
 
 /* Success alert */
 
 .alert {
-    width: 90%;
+    width: 85%;
     font-family: proxima-nova, sans-serif;
-    font-weight: 1000;
+    font-weight: 700;
     margin: 10px 0 10px 0;
     padding: 15px;
     margin-left: auto;
     margin-right: auto;
-    background: #90EE90;
+    background: #407e40;
     color: white;
     border: 1px solid #ccc;
     border-radius: 15px;
@@ -110,10 +116,10 @@
 
 /** Mobile **/
 
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
 
     .row{
         margin: 0;
     }
 
-}
+} */
