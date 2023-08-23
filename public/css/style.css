@@ -162,6 +162,7 @@ li .list-arrow {
     transition: color .4s ease-in-out, box-shadow .4s ease-in-out;
     box-shadow: inset 0 0 0 0 var(--color5);
     margin: 0;
+    font-family: 'Lora', serif;
 }
 
 .logOutbtn:hover {
@@ -242,7 +243,7 @@ strong {
     flex-direction: column;
     justify-content: center;
     text-align: left;
-    transform: scaleY(1.1);
+    transform: scaleY(1.05);
     transform-origin: center top;
 }
 
@@ -285,6 +286,8 @@ button {
     font-size: 18px;
     font-family: proxima-nova,sans-serif;
     transition-duration: 0.4s;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 button:hover {
@@ -311,18 +314,19 @@ button:hover {
 
 .grid-container {
     max-width: 60%;
-    margin: 0 auto;
+    margin: 0;
 }
 
 .grid-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 80px;
+    gap: 5%;
     margin-bottom: 20px;
 }
 
 .card {
     width: 100%;
+    min-width: 100%;
     height: auto;
     padding: 10px 20px 5px 20px;
     border: 1px solid #ccc;
@@ -358,11 +362,12 @@ button:hover {
 
 .card button {
     font-size: 0.8em;
-    height: 6%;
+    height: auto;
     width: 100%;
     color: black;
     background: white;
     border: 1px solid #ccc;
+    cursor: pointer;
 }
 
 .card b {
@@ -419,7 +424,7 @@ button:hover {
 }
 
 .shipping-notice span {
-    font-size: 2em;
+    font-size: 1.5em;
     margin-bottom: 0;
 }
 
@@ -532,6 +537,7 @@ button:hover {
     width: 170px;
     height: 40px;
     font-family: proxima-nova,sans-serif;
+    padding: 0;
 }
 
 /* Footer */

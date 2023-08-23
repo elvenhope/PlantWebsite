@@ -34,8 +34,9 @@ header{
 
 .frame-container {
 	align-content: center;
+	border: 1px solid #ccc;
 	align-items: center;
-	background: #fff000;
+	background: white;
 	border-radius: 20px;
 	display: flex;
 	justify-content: space-between;
@@ -53,7 +54,7 @@ header{
 
 .frame-container-column > button,
 .number {
-	background: #fff000;
+	background: white;
 	border: 0;
 	font-size: inherit;
 	text-align: center;
@@ -85,6 +86,7 @@ header{
 .product__buttons {
 	display: flex;
 	margin: 1.5rem;
+	padding: 15px;
 }
 
 .product__buttons > button {
@@ -97,7 +99,7 @@ header{
 	margin-right: 1rem;
 	outline: none;
 	overflow: hidden;
-	padding: 5px;
+	padding: 10px;
 }
 
 .product__buttons button {
@@ -164,8 +166,8 @@ header{
 }
 
 .product__footer-add-to-cart {
-	background-color: #fff000;
-	border: 0;
+	background-color: white;
+	border: 1px solid #ccc;
 	border-radius: 20px;
 	color: #000;
 	cursor: pointer;
@@ -180,9 +182,8 @@ header{
     text-decoration: none;
 }
 .product__footer-add-to-cart:hover {
-
-background-color: black;
-color: #fff000;
+background: var(--color7);
+color: white;
 border:none;
 transition-duration: 0.4s;
 }
@@ -336,7 +337,9 @@ transition-duration: 0.4s;
 }
 
 .selected {
-	background-color: #fff000;
+	background-color: var(--color7);
+	color: white;
+	transition-duration: 0.4s;
 }
 
 .size-button {
@@ -365,11 +368,11 @@ transition-duration: 0.4s;
 
 .swiper-button-next,
 .swiper-button-prev {
-	color: var(--color1);
+	color: #E3C257;;
 }
 
 .swiper-pagination-bullet-active {
-	background-color: var(--color1);
+	background-color: #E3C257;;
 }
 
 .wrapper {
@@ -443,7 +446,9 @@ li > svg {
 @media screen and (min-width: 1279px) {
 	.product__buttons > button:hover,
 	.size-button:hover {
-		background-color: var(--color1);
+		background-color: #E3C257;
+		color: white;
+		transition-duration: 0.4s;
 	}
 
 	.products__related-plantTitle:hover,

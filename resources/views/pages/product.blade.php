@@ -168,12 +168,7 @@ Product
 							- 17.08.2023
 						</span>
 						<p class="review-text" tabindex="0">
-							Good quality and fast shipping. Lorem ipsum dolor sit, amet
-							consectetur adipisicing elit. Iure quae harum, maxime enim in quis
-							quisquam fugit omnis at ut consequatur molestias voluptas dolorum
-							aspernatur quas illum explicabo nemo debitis doloribus sunt alias
-							aliquam quidem dignissimos. Consequatur autem rerum minus iste?
-							Totam nemo ipsam quo voluptatibus maxime deleniti quis quidem.
+							Good quality and fast shipping. Just recieved my Hoya Parasitica Black Edge. I am so impressed. Huge plant, much bigger than I expected from looking at the pictures. Arrived in perfect health and condition. 5* rating, all the way.
 						</p>
 						<div class="rating">
 							<input type="radio" name="rating" value="5" id="5" />

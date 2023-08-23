@@ -13,10 +13,11 @@
 
 
     <br />
-    <div class="container">
+    <div class="products_success_container">
 
         @if (session('success'))
             <div class="alert alert-success">
+                <i class="fa-solid fa-circle-info"></i>
                 {{ session('success') }}
             </div>
         @endif
@@ -35,7 +36,7 @@
                         </a>
                         <p>{{ $product->description }}</p>
                         <p><strong>Price:</strong> ${{ $product->price }}</p>
-                        <p class="btn-holder" id="open_cart_btn"><a href="{{ route('add.to.cart', $product->id) }}" class="btn">Add to cart</a></p>
+                        <p class="btn-holder" id="open_cart_btn"><a href="{{ route('add.to.cart', $product->id) }}" class="btn">ADD TO CART</a></p>
                     </div>
                 </div>
             </div>
