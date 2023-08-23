@@ -18,21 +18,11 @@ use App\Http\Controllers\ProductController;
 */
 
 
-Route::get('/', [HomeController::class, 'index']);
-
-Route::get('plants', function(){
-    return view('pages.plants');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('product', function(){
     return view('pages.product');
 });
-
-
-Route::get('authorisation', function(){
-    return view('pages.authorisation');
-});
-
 
 /*
 products page (PLP)
@@ -43,3 +33,11 @@ Route::get('cart', [ProductController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('add.to.cart');
 Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');
 Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('remove.from.cart');
+
+/*
+product page (PDP)s
+*/
+Route::get('/product/{id}', [ProductController::class, 'show']);
+Route::get('/add-to-cart/{id}/{quantity?}', [ProductController::class, 'addToCart']);
+
+require __DIR__.'/auth.php';

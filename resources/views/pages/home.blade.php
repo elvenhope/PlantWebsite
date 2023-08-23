@@ -2,7 +2,7 @@
 
 
 @section('pageTitle')
-Mage's Greens
+Mage's Greens  🌿
 @stop
 
 
@@ -18,37 +18,51 @@ Mage's Greens
 <div class="wallpaper">
     <h1 class="text-wrapper">touching the<br>hearts of<br>all plants</h1>
     <div class="overlay">
-        <h2>Summer sale</h2>
-        <p>Elevate your plant care game this summer with PLNTS, <br>your ultimate resource for all things green and vibrant!</p>
-        <button>Let's go</button>
+            <h2 id="summerHead">Summer sale</h2>
+            <p id="summerText">Elevate your plant care game this summer with Mage's greens, <br>your ultimate resource for all things green and vibrant!</p>
+            <button id="summerButton">Let's go</button>
     </div>
 </div>
 <div class="mobile-overlay">
     <h2>Summer sale</h2>
-    <p>Elevate your plant care game this summer with PLNTS, <br>your ultimate resource for all things green and vibrant!</p>
+    <p>Elevate your plant care game this summer with Mage's greens, <br>your ultimate resource for all things green and vibrant!</p>
     <button>Let's go</button>
 </div>
+<h2 id="products-head">Featured product list</h2>
 <div class="products">
-    <h2>Product list</h2>
-    <div class="product">
-        <div class="productImage">
-            <img src="{{ URL::asset('images/plant1.jpg') }}" alt="">
+    <div class="grid-container">
+        @php $count = 0 @endphp
+        <div class="grid-row">
+            @foreach($products as $product)
+                @if($count >= 6)
+                    @break
+                @endif
+                <div class="card">
+                    <img class="card-image" src="{{ $product->imgLink }}" alt="{{ $product->name }}">
+                    <h3>{{ $product->name }}</h3>
+                    <p>{{ $product->description }}</p>
+                    <p>Price: <b>{{ $product->price }}€</b> <s>35.99€</s></p>
+                    <a href="{{ route('add.to.cart', $product->id) }}"><button><strong>ADD TO CART</strong></button></a>
+                </div>
+
+                @php $count++ @endphp
+                @if($count % 3 === 0)
+                    </div><div class="grid-row">
+                @endif
+            @endforeach
         </div>
-        <div class="productInfo">
-            <p>Product info</p>
-        </div>
-    </div>
-    <div class="product">
-        <div class="productImage">
-            <img src="{{ URL::asset('images/plant2.jpg') }}" alt="">
-        </div>
-        <button>View all</button>
     </div>
 </div>
-<div class="shipping-notice">
-    <img src="{{ URL::asset('images/shipping-notice.png') }}" alt="">
-    <p>Free shipping from €50,-</p>
 
+<div class="shipping-notice">
+    <div>
+        <i class="fa fa-solid fa-truck-fast"></i>
+        <span class="shippingFree">Free <strong>shipping</strong> from <strong>€50,-</strong></span>
+    </div>
+    <div>
+        <i class="fa-solid fa-shield-heart"></i>
+        <span>30 days Mage's <strong>health guarantee</strong></span>
+    </div>
 </div>
 <div class="featured-wallpaper">
     <div class="featured-plant-text">
