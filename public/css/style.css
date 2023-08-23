@@ -227,7 +227,7 @@ strong {
 .text-wrapper {
     background-color: rgba(255, 255, 255, 0.7);
     margin-right: 20px;
-    margin-left: 40px;
+    margin-left: 20px;
     margin-bottom: 20px;
 }
 
@@ -326,7 +326,7 @@ button:hover {
 
 .card {
     width: 100%;
-    min-width: 100%;
+    min-width: 100px;
     height: auto;
     padding: 10px 20px 5px 20px;
     border: 1px solid #ccc;
