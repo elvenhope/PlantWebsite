@@ -7,4 +7,5 @@
 
 @section('content')
 	<x-search-bar :query="$query"></x-search-bar>
+    {{ $products }}
 @endsection
