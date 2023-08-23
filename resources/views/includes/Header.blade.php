@@ -43,6 +43,7 @@
                 </form>
                 <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
             </li>
+            @endauth
             <li>
                 <a href="#">
                     <i class="fas fa-solid fa-sharp fa-light fa-cart-shopping mobile-icon" style="color: #434447;"></i>
@@ -50,7 +51,6 @@
                 </a>
                 <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
             </li>
-            @endauth
         </ul>
     </div>
 </nav>

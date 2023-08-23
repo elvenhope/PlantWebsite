@@ -91,7 +91,7 @@
                     @endif
                 </ul>
 
-                <button type="submit" class="btn">
+                <button class="btn">
                     <span></span>
                     <span></span>
                     <span></span>
