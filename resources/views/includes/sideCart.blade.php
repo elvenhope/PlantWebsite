@@ -16,7 +16,7 @@
             <!-- Item -->
             @if(session('cart'))
                 @foreach(session('cart') as $id => $details)
-                    <div class="cart_item">
+                    <div class="cart_item" data-value="{{ $details['product_id'] }}">
                         <div class="remove_item remove-from-cart">
                             <span>&times;</span>
                         </div>
@@ -85,63 +85,179 @@
         }, 500);
     }
 
-    $(".update-cart-minus").click(function (e) {
-        e.preventDefault();
+    // $(".update-cart-minus").click(function (e) {
+    //     e.preventDefault();
 
-        var btn_minus = document.querySelector('.update-cart-value').innerHTML
-        console.log(btn_minus);
-        // console.log(ele)
-        $.ajax({
-            url: "{{ route('update.cart') }}",
-            method: "patch",
-            data: {
-                _token: '{{ csrf_token() }}',
-                id: ele.parents("tr").attr("data-id"),
-                quantity: ele.parents("tr").find(".quantity").val()
-            },
-            success: function (response) {
-                // window.location.reload();
+    //     var btn_minus = document.querySelector('.update-cart-value').innerHTML
+    //     console.log(btn_minus);
+    //     // console.log(ele)
+    //     $.ajax({
+    //         url: "{{ route('update.cart') }}",
+    //         method: "patch",
+    //         data: {
+    //             _token: '{{ csrf_token() }}',
+    //             id: ele.parents("tr").attr("data-id"),
+    //             quantity: ele.parents("tr").find(".quantity").val()
+    //         },
+    //         success: function (response) {
+    //             // window.location.reload();
+    //         }
+    //     });
+    // });
+
+    // $(".update-cart-plus").click(function (e) {
+    //     e.preventDefault();
+
+    //     var ele = document.querySelector('.update-cart')
+    //     // console.log(ele)
+    //     $.ajax({
+    //         url: "{{ route('update.cart') }}",
+    //         method: "patch",
+    //         data: {
+    //             _token: '{{ csrf_token() }}',
+    //             id: ele.parents("tr").attr("data-id"),
+    //             quantity: ele.parents("tr").find(".quantity").val()
+    //         },
+    //         success: function (response) {
+    //             // window.location.reload();
+    //         }
+    //     });
+    // });
+
+    function setHeaders(headers){
+  for(let key in headers){
+    xhr.setRequestHeader(key, headers[key])
+  }
+}
+    // document.addEventListener("DOMContentLoaded", function () {
+    //     const removeButtons = document.querySelectorAll(".remove-from-cart");
+
+    //     removeButtons.forEach(button => {
+    //         button.addEventListener("click", function (e) {
+    //             e.preventDefault();
+
+    //             if (confirm("Are you sure you want to delete?")) {
+    //                 const ele = e.currentTarget;
+    //                 const cartItem = ele.closest(".cart_item");
+    //                 const itemId = cartItem.dataset.itemId;
+
+    //                 const formData = new FormData();
+    //                 formData.append("id", itemId);
+
+    //                 const xhr = new XMLHttpRequest();
+    //                 xhr.open("DELETE", "{{ route('remove.from.cart') }}");
+    //                 const product_id = cartItem.dataset.value;
+    //                 console.log(product_id);
+    //                 setHeaders({"X-CSRF-TOKEN":"{{ csrf_token() }}","id": product_id});
+    //                 // xhr.setRequestHeader("X-CSRF-TOKEN", '{{ csrf_token() }}');
+    //                 xhr.onload = function () {
+    //                     if (xhr.status === 200) {
+    //                         cartItem.remove();
+    //                         updateCartTotal();
+    //                     } else {
+    //                         console.error("Error:", xhr.status, xhr.statusText);
+    //                     }
+    //                 };
+    //                 xhr.onerror = function () {
+    //                     console.error("Network error");
+    //                 };
+    //                 xhr.send(formData);
+    //             }
+    //         });
+    //     });
+    // });
+    document.addEventListener("DOMContentLoaded", function () {
+    const removeButtons = document.querySelectorAll(".remove-from-cart");
+
+    removeButtons.forEach(button => {
+        button.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            if (confirm("Are you sure you want to delete?")) {
+                const ele = e.currentTarget;
+                const cartItem = ele.closest(".cart_item");
+                const productId = cartItem.dataset.value;
+
+                const xhr = new XMLHttpRequest();
+                xhr.open("DELETE", `{{ route('remove.from.cart') }}?product_id=${productId}`);
+                xhr.setRequestHeader("X-CSRF-TOKEN", '{{ csrf_token() }}');
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        cartItem.remove();
+                        updateCartTotal();
+                    } else {
+                        console.error("Error:", xhr.status, xhr.statusText);
+                    }
+                };
+                xhr.onerror = function () {
+                    console.error("Network error");
+                };
+                xhr.send();
             }
         });
     });
+});
 
-    $(".update-cart-plus").click(function (e) {
-        e.preventDefault();
 
-        var ele = document.querySelector('.update-cart')
-        // console.log(ele)
-        $.ajax({
-            url: "{{ route('update.cart') }}",
-            method: "patch",
-            data: {
-                _token: '{{ csrf_token() }}',
-                id: ele.parents("tr").attr("data-id"),
-                quantity: ele.parents("tr").find(".quantity").val()
-            },
-            success: function (response) {
-                // window.location.reload();
-            }
-        });
-    });
+    document.addEventListener("DOMContentLoaded", function () {
+        const minusButtons = document.querySelectorAll(".update-cart-minus");
+        const plusButtons = document.querySelectorAll(".update-cart-plus");
 
-    $(".remove-from-cart").click(function (e) {
-        e.preventDefault();
+        minusButtons.forEach(button => {
+            button.addEventListener("click", function (e) {
+                e.preventDefault();
+                const cartItem = button.closest(".cart_item");
+                const itemId = cartItem.dataset.itemId;
 
-        var ele = $(this);
-        console.log(ele)
-        if(confirm("Are you sure want to remove?")) {
-            $.ajax({
-                url: "{{ route('remove.from.cart') }}",
-                method: "DELETE",
-                data: {
-                    _token: '{{ csrf_token() }}',
-                    id: ele.parents("tr").attr("data-id")
-                },
-                success: function (response) {
-                    // window.location.reload();
-                }
+                updateCartItem(itemId, -1, cartItem); // Вызов функции для обновления количества товара
             });
-        }
+        });
+
+        plusButtons.forEach(button => {
+            button.addEventListener("click", function (e) {
+                e.preventDefault();
+                const cartItem = button.closest(".cart_item");
+                const itemId = cartItem.dataset.itemId;
+
+                updateCartItem(itemId, 1, cartItem); // Вызов функции для обновления количества товара
+            });
+        });
     });
+
+    function updateCartItem(itemId, change, cartItem) {
+        const formData = new FormData();
+        formData.append("id", itemId);
+        formData.append("change", change);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("PATCH", "{{ route('update.cart') }}");
+        xhr.setRequestHeader("X-CSRF-TOKEN", '{{ csrf_token() }}');
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                const newValue = parseInt(cartItem.querySelector('.update-cart-value').textContent) + change;
+                cartItem.querySelector('.update-cart-value').textContent = newValue;
+                // Обработка успешного ответа, например, обновление подытога
+                // updateCartTotal(); // Ваша функция для обновления подытога
+            } else {
+                console.error("Произошла ошибка:", xhr.status, xhr.statusText);
+            }
+        };
+        xhr.onerror = function () {
+            console.error("Произошла ошибка сети");
+        };
+        xhr.send(formData);
+    }
+
+    function updateCartTotal() {
+        const totalElements = document.querySelectorAll(".item_details-price");
+        let total = 0;
+
+        totalElements.forEach(element => {
+            total += parseFloat(element.textContent.replace("$", ""));
+        });
+
+        const subtotalPriceElement = document.getElementById("subtotal_price");
+        subtotalPriceElement.textContent = "$ " + total.toFixed(2);
+    }
 </script>
 @endsection
