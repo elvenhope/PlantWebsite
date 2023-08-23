@@ -202,7 +202,7 @@
     letter-spacing: 2px;
 }
 
-.cart_actions button, .cart_actions a{
+.cart_actions button {
     width: 100%;
     margin: 0;
     border: none;
@@ -214,13 +214,8 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    font-size: inherit;
-    font-weight: 700;
 }
 
-.side_cart_link{
-    background-color: #069fe6 !important;
-
+.cart_actions button:nth-of-type(2) {
+    background-color: #069fe6;
 }
