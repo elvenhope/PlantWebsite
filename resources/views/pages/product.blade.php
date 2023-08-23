@@ -16,13 +16,13 @@ Product
 				<div class="swiper">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-							<img src="{{ URL::asset('assets/product/image_1.avif') }}" />
+							<img src="{{ $product->imgLink }}" />
 						</div>
 						<div class="swiper-slide">
 							<img src="{{ URL::asset('assets/product/image_2.avif') }}" />
 						</div>
 						<div class="swiper-slide">
-							<img src="{{ URL::asset('assets/product/image_1.avif') }}" />
+							<img src="{{ $product->imgLink }}" />
 						</div>
 						<div class="swiper-slide">
 							<img src="{{ URL::asset('assets/product/image_2.avif') }}" />
@@ -36,14 +36,14 @@ Product
 					<div class="swiper-scrollbar"></div>
 				</div>
 				<div class="wrapper">
-					<div class="product__name" tabindex="0">Plant Name</div>
-					<div class="product__category"><a href="#">Category</a></div>
+					<div class="product__name" tabindex="0">{{ $product->name }}</div>
+					<div class="product__category"><a href="#">{{ $product->species }}</a></div>
 					<div class="product__price">
-						<span class="product__price--actual" tabindex="0" data-value="9.99">
-							$9.99
+						<span class="product__price--actual" tabindex="0" data-value="{{ $product->price }}">
+							€{{ $product->price }}
 						</span>
 						<span class="product__price--old" tabindex="0" data-value="12.99">
-							$12.99
+							€12.99
 						</span>
 					</div>
 					<div class="product__separator"></div>
@@ -54,14 +54,7 @@ Product
 					</div>
 					<div class="product__description-title" tabindex="0">Description</div>
 					<div class="product__description-text cut-text" tabindex="0">
-						Here she is! The much beloved and rare Monstera Thai Constellation!
-						Isn’t she absolutely gorgeous?! This is a rare Monstera species that
-						you will not find in nature. This is because she was especially
-						created to have stable variegation. She will never stop giving you
-						her amazing variegated leaves. Yay! :) That is a very big difference
-						with her look-a-like, the variegated Monstera. Another big
-						difference is that the Thai is a real crawler and the space between
-						the nodes is way shorter than with the Monstera Variegata.
+						{{ $product->description }}
 					</div>
 				</div>
 			</div>
@@ -306,12 +299,11 @@ Product
 						</div>
 					</div>
 				</div>
-				<button class="product__footer-add-to-cart">Add to cart</button>
+				<a href="{{ route('add.to.cart', ['id' => $product->id, 'quantity' => 1]) }}" type="button" class="product__footer-add-to-cart add-to-cart-anchor">Add to cart</a>
 			</div>
-			<div class="product__footer-total" tabindex="0">Total: €9.99</div>
+			<div class="product__footer-total" tabindex="0">Total: €{{ $product->price }}</div>
 		</div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script type="text/javascript" src="{{ URL::asset('js/product.js') }}"></script>
-
 @stop

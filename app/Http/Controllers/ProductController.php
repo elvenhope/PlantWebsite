@@ -18,7 +18,21 @@ class ProductController extends Controller
         $products = Product::all();
         return view('pages/products', compact('products'));
     }
-  
+
+
+    public function show($id)
+{
+    $product = Product::find($id);
+
+    if ($product === null) {
+        abort(404);
+    }
+
+    return view('pages/product', ['product' => $product]);
+}
+
+
+
     /**
      * Write code on Method
      *
@@ -28,33 +42,35 @@ class ProductController extends Controller
     {
         return view('pages/cart');
     }
-  
+
     /**
      * Write code on Method
      *
      * @return response()
      */
-    public function addToCart($id)
+    // public function addToCart($id, $quantity = 1)
+    public function addToCart(Request $request, $id)
     {
         $product = Product::findOrFail($id);
-          
+        $quantity = $request->input('quantity', 1);
+
         $cart = session()->get('cart', []);
-  
+
         if(isset($cart[$id])) {
-            $cart[$id]['quantity']++;
+            $cart[$id]['quantity'] += $quantity;
         } else {
             $cart[$id] = [
                 "name" => $product->name,
-                "quantity" => 1,
+                "quantity" => $quantity,
                 "price" => $product->price,
                 "imgLink" => $product->imgLink
             ];
         }
-          
+
         session()->put('cart', $cart);
         return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
-  
+
     /**
      * Write code on Method
      *
@@ -69,7 +85,7 @@ class ProductController extends Controller
             session()->flash('success', 'Cart updated successfully');
         }
     }
-  
+
     /**
      * Write code on Method
      *

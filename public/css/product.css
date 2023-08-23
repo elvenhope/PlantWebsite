@@ -174,6 +174,10 @@ header{
 	padding: 10px 15px;
 	text-align: center;
 	width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 .product__footer-add-to-cart:hover {
 
@@ -578,6 +582,8 @@ li > svg {
 	.frame-container {
 		padding: 15px 30px;
 	}
+
+
 
 	.product__footer-add-to-cart,
 	.product__footer-input-total {

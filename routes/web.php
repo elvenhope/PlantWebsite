@@ -34,4 +34,10 @@ Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('a
 Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');
 Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('remove.from.cart');
 
+/*
+product page (PDP)s
+*/
+Route::get('/product/{id}', [ProductController::class, 'show']);
+Route::get('/add-to-cart/{id}/{quantity?}', [ProductController::class, 'addToCart']);
+
 require __DIR__.'/auth.php';
