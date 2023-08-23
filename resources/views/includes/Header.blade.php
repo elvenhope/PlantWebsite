@@ -15,7 +15,7 @@
                 </a>
                 <img src="{{ URL::asset('assets/product/greater-than-icon.svg') }}" class="list-arrow" alt="">
             <li>
-                <a href="#assistant">
+                <a href="/#assistant">
                     <i class="fa-regular fa-address-book mobile-icon" style="color: #434447;"></i>
                     <span class="nav-text">Contacts<span>
                 </a>
