@@ -10,7 +10,7 @@
     grid-gap: 10px;
     justify-items: center;
     width: 85%;
-    margin: 0 auto;
+    margin: 20px auto 20px auto ;
 }
 .col {
     display: flex;

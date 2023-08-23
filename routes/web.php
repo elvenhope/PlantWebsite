@@ -43,4 +43,8 @@ Route::get('/add-to-cart/{id}/{quantity?}', [ProductController::class, 'addToCar
 
 Route::get('/search', [SearchController::class, "index"])->name('search');
 
+
+Route::get('/products/{species}', [ProductController::class, 'showBySpecies']);
+
+
 require __DIR__.'/auth.php';

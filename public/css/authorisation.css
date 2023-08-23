@@ -10,7 +10,7 @@ body {
     height: 100vh;
     font-family: sans-serif;
     /* background: linear-gradient(75.7deg, rgb(34, 126, 34) 3.8%, rgb(99, 162, 17) 87.1%); */
-    background-image: url("/assets/background.jpg");
+    background-image: url("/assets/background.webp");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;

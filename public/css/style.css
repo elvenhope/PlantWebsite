@@ -216,7 +216,7 @@ strong {
 .wallpaper {
     width: 100%;
     height: 500px;
-    background-image: url("/assets/houseplant.jpg");
+    background-image: url("/assets/houseplant.webp");
     background-size: cover;
     background-position: 50% 60%;
     color: black;
@@ -227,7 +227,7 @@ strong {
 .text-wrapper {
     background-color: rgba(255, 255, 255, 0.7);
     margin-right: 20px;
-    margin-left: 40px;
+    margin-left: 20px;
     margin-bottom: 20px;
 }
 
@@ -313,7 +313,7 @@ button:hover {
 }
 
 .grid-container {
-    max-width: 60%;
+    max-width: 80%;
     margin: 0;
 }
 
@@ -326,7 +326,8 @@ button:hover {
 
 .card {
     width: 100%;
-    min-width: 100%;
+    min-width: 100px;
+    max-width: 350px;
     height: auto;
     padding: 10px 20px 5px 20px;
     border: 1px solid #ccc;
@@ -336,7 +337,6 @@ button:hover {
 }
 
 .card-image {
-    height: 30%;
     transition-duration: 0.2s;
     border-radius: 15px;
 }
@@ -389,6 +389,7 @@ button:hover {
 .card-image {
     max-width: 100%;
     height: auto;
+    width: 300px;
 }
 
 /* Shipping notice */
@@ -433,7 +434,7 @@ button:hover {
 .featured-wallpaper {
     width: 90%;
     height: 500px;
-    background-image: url("/assets/featured.jpg");
+    background-image: url("/assets/featured.webp");
     background-position: 50% 90%;
     background-size:cover;
     color: black;
