@@ -56,7 +56,9 @@
                     <p>TOTAL:</p>
                     <p><span id="subtotal_price">$ {{ $total }}</span></p>
                 </div>
-                <button class="cart_btn">View Cart</button>
+                <a href="{{ route('cart') }}" type="button" class="cart_btn side_cart_link">View Cart</a>
+                {{-- <button class="cart_btn"><a href="#">View Cart</a></button> --}}
+
                 <button class="cart_btn">Checkout</button>
             </div>
         </div>
