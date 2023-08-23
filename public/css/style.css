@@ -162,6 +162,7 @@ li .list-arrow {
     transition: color .4s ease-in-out, box-shadow .4s ease-in-out;
     box-shadow: inset 0 0 0 0 var(--color5);
     margin: 0;
+    font-family: 'Lora', serif;
 }
 
 .logOutbtn:hover {

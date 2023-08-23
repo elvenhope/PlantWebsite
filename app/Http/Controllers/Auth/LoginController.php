@@ -24,7 +24,8 @@ class LoginController extends Controller
         try {
             $request->authenticate();
         } catch (ValidationException $e) {
-            echo "WRONG PASSWORD OR SMTH";
+            // dd($e);
+            return Redirect::back()->withErrors($e->validator)->withInput();
         }
         $request->session()->regenerate();
 
