@@ -313,7 +313,7 @@ button:hover {
 }
 
 .grid-container {
-    max-width: 60%;
+    max-width: 80%;
     margin: 0;
 }
 
@@ -327,6 +327,7 @@ button:hover {
 .card {
     width: 100%;
     min-width: 100px;
+    max-width: 350px;
     height: auto;
     padding: 10px 20px 5px 20px;
     border: 1px solid #ccc;
