@@ -7,7 +7,6 @@ Mage's Greens  🌿
 
 
 @section('content')
-
 <div class="hwrap">
     <div class="hitem">
         <span><strong>Free shipping</strong> for orders over €50,-</span>
@@ -69,7 +68,6 @@ Mage's Greens  🌿
         <h2>Plant of the month</h2>
         <h2>Anthurium Warocqueanum</h2>
     </div>
-    <img src="{{ URL::asset('images/featured-image.jpg') }}" alt="">
 </div>
 <div id="review">
     <p><b>Magesgreens.com</b> is rated <b>excellent</b> by our customers.</p>

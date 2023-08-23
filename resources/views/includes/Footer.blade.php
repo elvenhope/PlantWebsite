@@ -5,19 +5,16 @@
             <div class="footer-links">
                 <div class="footer-column">
                     <h3>My Account</h3>
-                    <a href="#">Log in</a>
+                    <a href="/login">Log in</a>
                 </div>
                 <div class="footer-column">
                     <h3>Shop</h3>
-                    <a href="#">Plants</a>
-                    <a href="#">Pots</a>
-                    <a href="#">Cart</a>
+                    <a href="/plants">Plants</a>
                 </div>
                 <div class="footer-column">
                     <h3>Customer Service</h3>
                     <a href="#">FAQ</a>
-                    <a href="#">Contact Us</a>
-                    <a href="#">Shipping</a>
+                    <a href="#assistant">Contact Us</a>
                 </div>
                 <div class="footer-column">
                     <h3>About</h3>
@@ -33,17 +30,14 @@
                         <span class="footer-col-mob-plus dropbtn">+</span>
                     </h3>
                     <a href="#">FAQ</a>
-                    <a href="#">Contact Us</a>
-                    <a href="#">Shipping</a>
+                    <a href="#assistant">Contact Us</a>
                 </div>
                 <div class="footer-column-mobile" id="myDropdown2">
                     <h3 onclick="myFunction2()" class="dropbtn">
                         Shop
                         <span class="footer-col-mob-plus dropbtn">+</span>
                     </h3>
-                    <a href="#">Plants</a>
-                    <a href="#">Pots</a>
-                    <a href="#">Cart</a>
+                    <a href="/plants">Plants</a>
                 </div>
                 <div class="footer-column-mobile" id="myDropdown3">
                     <h3 onclick="myFunction3()" class="dropbtn">
@@ -55,7 +49,7 @@
                     <a href="#">About us</a>
                 </div>
                 <div class="footer-column-mobile-login">
-                    <a href="#">Log in</a>
+                    <a href="/login">Log in</a>
                 </div>
             </div>
             <div class="soc-media">
