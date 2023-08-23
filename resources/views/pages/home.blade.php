@@ -75,7 +75,7 @@ Mage's Greens  🌿
 <div class='sk-ww-google-reviews reviews-list' data-embed-id='181499'></div><script src='https://widgets.sociablekit.com/google-reviews/widget.js' async defer></script>
 <div class="assistant" id="assistant">
 <div id="assistantImage">
-    <img src="{{ URL::asset('assets/assistant.jpg') }}" alt="">
+    <img src="{{ URL::asset('assets/assistant.webp') }}" alt="">
 </div>
 <div id="assistantGreet">
     <h2 id="assistantText">Hi, I'm Alex, your Mage's Greens guide!</h2>
