@@ -125,8 +125,10 @@ class ProductController extends Controller
 
 
     public function showBySpecies($species)
-    {
-        $products = Product::where('species', $species)->get();
-        return view('pages/products', compact('products'));
-    }
+{
+    $products = Product::where('species', $species)->get();
+    $query = '';
+    return view('pages/products', compact('products', 'query'));
+}
+
 }
