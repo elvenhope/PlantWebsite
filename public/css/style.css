@@ -17,6 +17,8 @@
     box-sizing: border-box;
 }
 
+
+
 html {
     scroll-behavior: smooth;
 }
@@ -652,6 +654,16 @@ div.soc-media a {
 
 .footer-links-mobile {
     display: none;
+}
+
+/* ALERT */
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    padding: 1em 1.5em 1em 1em;
+    border: 1px solid transparent;
+    text-align: center;
 }
 
 /* Mobile */

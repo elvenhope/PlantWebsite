@@ -6,7 +6,15 @@ Mage's Greens  🌿
 @stop
 
 
+
+
 @section('content')
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
 <div class="hwrap">
     <div class="hitem">
         <span><strong>Free shipping</strong> for orders over €50,-</span>

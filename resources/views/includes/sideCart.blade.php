@@ -15,48 +15,50 @@
         <div class="cart_items">
             <!-- Item -->
             @if (session('cart'))
-                @foreach (session('cart') as $id => $details)
-                    @isset($details['product_id'])
-                    <div class="cart_item" data-value="{{ $details['product_id'] }}">
-                        @else
-                        <div class="cart_item" data-value="">
-                            @endisset
-                            <div class="remove_item remove-from-cart">
-                                <span>&times;</span>
-                            </div>
-                            <div class="item_img">
-                                <img src="{{ $details['imgLink'] }}" />
-                            </div>
-                            <div class="item_details">
-                                <p>{{ $details['name'] }}</p>
-                                <strong class="item_details-price">${{ $details['price'] }}</strong>
-                                <div class="qty">
-                                    <span class="update-cart-minus">-</span>
-                                    <strong class="update-cart-value">{{ $details['quantity'] }}</strong>
-                                    <span class="update-cart-plus">+</span>
-                                </div>
-                            </div>
+            @foreach (session('cart') as $id => $details)
+            @isset($details['product_id'])
+            <div class="cart_item" data-value="{{ $details['product_id'] }}">
+                @else
+                <div class="cart_item" data-value="">
+                    @endisset
+                    <div class="remove_item remove-from-cart">
+                        <span>&times;</span>
                     </div>
+                    <div class="item_img">
+                        <img src="{{ $details['imgLink'] }}" />
+                    </div>
+                    <div class="item_details">
+                        <p>{{ $details['name'] }}</p>
+                        <strong class="item_details-price">${{ $details['price'] }}</strong>
+                        <div class="qty">
+                            <span class="update-cart-minus">-</span>
+                            <strong class="update-cart-value">{{ $details['quantity'] }}</strong>
+                            <span class="update-cart-plus">+</span>
+                        </div>
+                    </div>
+                </div>
                 @endforeach
-            @endif
-            
-        <!-- /Item -->
-        <!-- Cart Actions -->
-        <div class="cart_actions">
-            @php $total = 0 @endphp
-            @foreach ((array) session('cart') as $id => $details)
-            @php $total += $details['price'] * $details['quantity'] @endphp
-            @endforeach
-            <div class="subtotal">
-                <p>TOTAL:</p>
-                <p><span id="subtotal_price">$ {{ $total }}</span></p>
+                @endif
+
+                <!-- /Item -->
+                <!-- Cart Actions -->
+                <div class="cart_actions">
+                    @php $total = 0 @endphp
+                    @foreach ((array) session('cart') as $id => $details)
+                    @php $total += $details['price'] * $details['quantity'] @endphp
+                    @endforeach
+                    <div class="subtotal">
+                        <p>TOTAL:</p>
+                        <p><span id="subtotal_price">$ {{ $total }}</span></p>
+                    </div>
+                    <a href="/cart">
+                        <button class="cart_btn btn1">View Cart</button>
+                    </a>
+                    <a href="{{ route('checkout.index') }}">
+                        <button class="cart_btn">Checkout</button>
+                    </a>
+                </div>
             </div>
-            <a href="/cart">
-                <button class="cart_btn btn1">View Cart</button>
-            </a>
-            <a href="#">
-                <button class="cart_btn">Checkout</button>
-            </a>
         </div>
     </div>
 </div>

@@ -4,7 +4,7 @@ use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -45,6 +45,10 @@ Route::get('/search', [SearchController::class, "index"])->name('search');
 
 
 Route::get('/products/{species}', [ProductController::class, 'showBySpecies']);
+
+
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+Route::post('/checkout/place-order', [CheckoutController::class, 'placeAnOrder'])->name('checkout.placeAnOrder');
 
 
 require __DIR__.'/auth.php';
