@@ -14,6 +14,12 @@
 </head>
 
 <body>
+    @if (session('message'))
+    <script>
+        alert('{{ session('message') }}');
+    </script>
+@endif
+
     <div class="login-page">
         <div class="form">
             <form class="register-form" method="post" action="{{ route('register') }}">

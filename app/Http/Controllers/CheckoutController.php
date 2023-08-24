@@ -22,13 +22,10 @@ class CheckoutController extends Controller
 
     public function placeAnOrder(Request $request)
     {
-        // if (!auth()->check()) {
-        //     return redirect()->route('login')->with('error', 'You must be logged in to place an order.');
-        // }
+        if (!auth()->check()) {
+            return redirect()->route('login')->with('message', 'Please login to continue');
+}
 
-        // if (empty($cart)) {
-        //     return redirect()->back()->with('error', 'Your cart is empty.');
-        // }
 
         $cart = session()->get('cart', []);
         $orderTotal = 0;
