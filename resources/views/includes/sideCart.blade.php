@@ -31,15 +31,10 @@
                         <p>{{ $details['name'] }}</p>
                         <strong class="item_details-price">${{ $details['price'] }}</strong>
                         <div class="qty">
-                            <!-- <span class="update-cart-minus">-</span>
-                            <strong>{{ $details['quantity'] }}</strong>
-                            <span class="update-cart-plus">+</span> -->
-
                             <button id="minus-btn">-</button>
                             <input class="product_quantity" id="quantity" type="number" value="{{$details['quantity']}}" min="1"
                                 step="1" max="100" pattern="/^/d+$/"
                                 onKeyPress="if(this.value.length==3) return false;" required />
-                                <!-- <strong class="product_quantity" id="quantity">{{ $details['quantity'] }}</strong> -->
                             <button id="plus-btn">+</button>
 
                         </div>
@@ -110,6 +105,26 @@
         }
     }
 
+    function updateSubtotal() {
+        let total = 0;
+
+        const cartItems = document.querySelectorAll('.cart_item');
+        cartItems.forEach(item => {
+            const price = parseFloat(item.querySelector('.item_details-price').textContent.replace('$', ''));
+            const quantity = parseInt(item.querySelector('.product_quantity').value);
+            total += price * quantity;
+        });
+
+        const subtotalElement = document.querySelector('[data-th="Subtotal"]');
+        subtotalElement.textContent = '$' + total.toFixed(2);
+    }
+
+    const quantityInputs = document.querySelectorAll('.product_quantity');
+    quantityInputs.forEach(input => {
+        input.addEventListener('input', updateSubtotal);
+    });
+
+
     document.addEventListener("DOMContentLoaded", function() {
         const removeButtons = document.querySelectorAll(".remove-from-cart");
 
@@ -128,7 +143,7 @@
                     xhr.onload = function() {
                         if (xhr.status === 200) {
                             cartItem.remove();
-                            updateCartTotal();
+                            updateSubtotal();
                             window.location.reload();
                         } else {
                             console.error("Error:", xhr.status, xhr.statusText);
@@ -170,16 +185,9 @@
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onload = function() {
                     if (xhr.status === 200) {
-                        // Update the subtotal
-                        const subtotal = price * quantity;
-                        subtotalElement.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
 
-                        // Update the total
-                        let total = 0;
-                        document.querySelectorAll('[data-th="Subtotal"]').forEach(subtotalElement => {
-                            total += parseFloat(subtotalElement.textContent.replace('Subtotal: $', ''));
-                        });
-                        document.querySelector('#total').textContent = `Total: $${total.toFixed(2)}`;
+                       updateSubtotal();
+
                     } else {
                         console.error("Error:", xhr.status, xhr.statusText);
                     }
@@ -218,5 +226,7 @@
             });
         });
     });
+
+
 </script>
 @endsection

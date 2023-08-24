@@ -231,3 +231,20 @@
 a .btn1 {
     background-color: rgba(227, 194, 87, 1);
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+    width: 40px; /* Adjust as needed */
+    text-align: center;
+    border: none;
+    border-radius: 0; /* Remove any border radius */
+    background-color: transparent; /* Optionally, you can add a background color */
+    font-size: inherit;
+    font-family: inherit;
+}
