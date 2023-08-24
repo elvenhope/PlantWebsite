@@ -58,8 +58,7 @@ Cart
         <tr>
             <td colspan="5" class="text-right">
                 <a href="{{ url('/plants') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
-                <button class="btn btn-success">Checkout</button>
-            </td>
+                <button class="btn btn-success" onclick="window.location.href='{{ url('/checkout') }}'">Checkout</button>            </td>
         </tr>
     </tfoot>
 </table>
