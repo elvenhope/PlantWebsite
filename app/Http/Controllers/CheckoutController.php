@@ -22,9 +22,9 @@ class CheckoutController extends Controller
 
     public function placeAnOrder(Request $request)
     {
-        if (!auth()->check()) {
-            return redirect()->route('login')->with('message', 'Please login to continue');
-}
+//         if (!auth()->check()) {
+//             return redirect()->route('login')->with('message', 'Please login to continue');
+// }
 
 
         $cart = session()->get('cart', []);
