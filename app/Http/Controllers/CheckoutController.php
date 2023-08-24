@@ -36,10 +36,10 @@ class CheckoutController extends Controller
 
         $order = new Order();
         $order->fill([
-            'user_id' => auth()->id(),
+            'user_id' => auth()->check() ? auth()->id() : null,
             'total_price' => $orderTotal,
             'address_line1' => $request->input('address_line1'),
-            'address_line2' => $request->input('address_line2'),
+            'email' => $request->input('email'),
             'city' => $request->input('city'),
             'state' => $request->input('state'),
             'zip' => $request->input('zip'),

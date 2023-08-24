@@ -10,7 +10,7 @@ class Order extends Model
     protected $fillable = [
         'user_id',
         'address_line1',
-        'address_line2',
+        'email',
         'city',
         'state',
         'zip',

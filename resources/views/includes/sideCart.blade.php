@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 @endforeach
-                @endif
+                
             </div>
             <!-- /Item -->
             <!-- Cart Actions -->
@@ -66,6 +66,7 @@
                     <button class="cart_btn">Checkout</button>
                 </a>
             </div>
+            @endif
         </div>
     </div>
 </div>
