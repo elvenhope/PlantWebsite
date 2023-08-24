@@ -27,7 +27,7 @@ Mage's Greens  🌿
     <div class="overlay">
             <h2 id="summerHead">Summer sale</h2>
             <p id="summerText">Elevate your plant care game this summer with Mage's greens, <br>your ultimate resource for all things green and vibrant!</p>
-            <button id="summerButton">Let's go</button>
+            <a id="summerButton" href="/#products-head" type="button">Let's go</a>
     </div>
 </div>
 <div class="mobile-overlay">

@@ -1,0 +1,86 @@
+h1,h2 {
+    font-family: proxima-nova, sans-serif;
+    letter-spacing: normal;
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+}
+
+#checkout {
+    font-weight: 700;
+}
+
+#cartItems {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#total {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#address {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+input {
+    display: block;
+    width: 200px;
+    height: 30px;
+}
+
+strong {
+    font-size: 1.3em;
+}
+
+hr {
+    margin-right: 5%;
+}
+
+ul {
+    margin-left: 5%;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-top: 20px;
+}
+
+#shipButton {
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 200px;
+    height: 40px;
+}
+
+#emptyCartContainer {
+    left: 10%;
+    position: absolute;
+    top: 40%;
+}
+
+#emptyCartContainer h1 {
+    margin-bottom: 20px;
+}
+
+.shipForm {
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+.myFooter {
+    position: fixed;
+    margin-top: auto;
+    bottom: 0;
+    width: 100%;
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .myFooter {
+        display: none;
+    }
+}

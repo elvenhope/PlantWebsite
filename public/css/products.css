@@ -10,7 +10,7 @@
     grid-gap: 10px;
     justify-items: center;
     width: 85%;
-    margin: 20px auto 60px auto ;
+    margin: 20px auto 200px auto ;
 }
 .col {
     display: flex;
@@ -127,11 +127,20 @@
 /* Footer */
 
 .myFooter {
-    flex-grow: 1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 @media (max-width: 700px) {
-    
+    .row {
+        margin-bottom: 60px;
+    }
 
+    .myFooter {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
 
 }
