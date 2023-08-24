@@ -257,8 +257,6 @@ strong {
     transform: scaleY(0.9);
 }
 
-
-
 .overlay h2 {
     font-size: 33px;
 }
@@ -278,7 +276,7 @@ h1 {
     font-family: Yeseva One, serif;
 }
 
-button {
+button,#summerButton {
     border-radius: 20px;
     background-color: var(--color7);
     width: 130px;
@@ -292,12 +290,22 @@ button {
     padding-bottom: 2%;
 }
 
-button:hover {
+#summerButton {
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover,#summerButton:hover {
     background-color: white;
     color: var(--color7);
     border: 1px var(--color7) solid;
     transition-duration: 0.4s;
 }
+
+
 
 /* Product section */
 

@@ -160,6 +160,7 @@
                         if (xhr.status === 200) {
                             cartItem.remove();
                             updateCartTotal();
+                            window.location.reload();
                         } else {
                             console.error("Error:", xhr.status, xhr.statusText);
                         }
@@ -168,6 +169,7 @@
                         console.error("Network error");
                     };
                     xhr.send();
+                    window.location.reload();
                 }
             });
         });
