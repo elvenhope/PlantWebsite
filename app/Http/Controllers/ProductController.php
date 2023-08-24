@@ -15,8 +15,18 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        return view('pages/products', compact('products'));
+        $query = request('query');
+
+        if ($query) {
+            $result = Product::where('name', 'LIKE', '%' . $query . '%')
+                ->orWhere('description', 'LIKE', '%' . $query . '%')
+                ->get();
+        } else {
+           $result = Product::all()->sortBy('name');
+           $query = "";
+        }
+        // return view('pages/products', compact('products')) => with('query', $query) => with('products', $products);
+        return view('pages/products') -> with('query', $query) -> with('products', $result);
     }
 
 

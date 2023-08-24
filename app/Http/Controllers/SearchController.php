@@ -20,6 +20,6 @@ class SearchController extends Controller
            $query = "";
         }
 
-        return view('pages.search')->with('query', $query)->with('products', $result);
+        return redirect('/plants')->with('query', $query)->with('products', $result);
     }
 }

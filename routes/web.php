@@ -29,7 +29,7 @@ Route::get('product', function(){
 products page (PLP)
 */
 
-Route::get('plants', [ProductController::class, 'index']);
+Route::get('plants', [ProductController::class, 'index'])->name('plants');
 Route::get('cart', [ProductController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('add.to.cart');
 Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');

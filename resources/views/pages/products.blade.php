@@ -23,7 +23,9 @@
 
         @yield('content')
     </div>
-
+    <div id="search-bar">
+        <x-search-bar :query="$query"></x-search-bar>
+    </div>
     <div class="row">
         @foreach ($products as $product)
             <div class="col">
