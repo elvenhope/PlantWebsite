@@ -60,7 +60,6 @@ class CheckoutController extends Controller
             $orderItem->save();
         }
 
-        // Destroy the cart session
         session()->forget('cart');
 
         return redirect()->route('home')->with('success', 'Order placed successfully!');
