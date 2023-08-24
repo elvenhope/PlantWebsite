@@ -40,13 +40,20 @@ Cart
         </div>
     </div>
 </div>
-    @endforeach
-    @endif
 <div class="cartTotal">
     <div id="total"><strong>Total ${{ $total }}</strong></div>
     <a href="{{ url('/plants') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
     <button class="btn btn-success" onclick="window.location.href='{{ url('/checkout') }}'">Checkout</button>
 </div>
+@endforeach
+@else 
+<div id="emptyCartContainer"> 
+    <h1>Your cart is empty!</h1>
+    <p>Your cart is currently empty, head back to the homepage to pick out some plants!</p>
+    <button onclick="javascript:history.back()">Go Back</button>
+</div>
+@endif
+
 
     
 {{-- <table id="cart" class="table table-hover table-condensed">
