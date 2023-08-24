@@ -66,7 +66,7 @@
     right: -20px;
     width: 20px;
     height: 20px;
-    background-color: #069fe6;
+    background-color: rgba(227, 194, 87, 1);
     border-radius: 50%;
     color: #fff;
     display: flex;
@@ -218,5 +218,5 @@
 }
 
 a .btn1 {
-    background-color: #069fe6;
+    background-color: rgba(227, 194, 87, 1);
 }

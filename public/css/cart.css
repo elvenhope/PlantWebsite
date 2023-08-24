@@ -1,9 +1,51 @@
 .myFooter {
-    position: fixed;
+    position: relative;
     width: 100%;
-    bottom: 0;
+    margin-top: auto;
+}
+
+.cart_item {
+    max-width: 50%;
+    max-height: 300px;
+    margin-right: auto;
+}
+
+.cart_item .item_img img {
+    width: 100%;
+    height: 100%;
 }
 
 main {
-    margin-bottom: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartTotal {
+    position: sticky;
+    background: white;
+    display: flex;
+    justify-content: end;
+    padding: 20px;
+}
+
+.cartTotal h3,a,button {
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 35px;
+}
+
+.cartTotal button {
+    font-family: proxima-nova, sans-serif;
+}
+
+.actions button {
+    height: 50px;
+}
+
+@media (max-width: 700px) {
+
+.cart_item {
+    max-width: 100%;
+}
+
 }
