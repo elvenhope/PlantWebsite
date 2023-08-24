@@ -31,33 +31,40 @@
                         <p>{{ $details['name'] }}</p>
                         <strong class="item_details-price">${{ $details['price'] }}</strong>
                         <div class="qty">
-                            <span class="update-cart-minus">-</span>
-                            <strong class="update-cart-value">{{ $details['quantity'] }}</strong>
-                            <span class="update-cart-plus">+</span>
+                            <!-- <span class="update-cart-minus">-</span>
+                            <strong>{{ $details['quantity'] }}</strong>
+                            <span class="update-cart-plus">+</span> -->
+
+                            <button id="minus-btn">-</button>
+                            <input class="product_quantity" id="quantity" type="number" value="{{$details['quantity']}}" min="1"
+                                step="1" max="100" pattern="/^/d+$/"
+                                onKeyPress="if(this.value.length==3) return false;" required />
+                                <!-- <strong class="product_quantity" id="quantity">{{ $details['quantity'] }}</strong> -->
+                            <button id="plus-btn">+</button>
+
                         </div>
                     </div>
                 </div>
                 @endforeach
                 @endif
-
-                <!-- /Item -->
-                <!-- Cart Actions -->
-                <div class="cart_actions">
-                    @php $total = 0 @endphp
-                    @foreach ((array) session('cart') as $id => $details)
-                    @php $total += $details['price'] * $details['quantity'] @endphp
-                    @endforeach
-                    <div class="subtotal">
-                        <p>TOTAL:</p>
-                        <p><span id="subtotal_price">$ {{ $total }}</span></p>
-                    </div>
-                    <a href="/cart">
-                        <button class="cart_btn btn1">View Cart</button>
-                    </a>
-                    <a href="{{ route('checkout.index') }}">
-                        <button class="cart_btn">Checkout</button>
-                    </a>
+            </div>
+            <!-- /Item -->
+            <!-- Cart Actions -->
+            <div class="cart_actions">
+                @php $total = 0 @endphp
+                @foreach ((array) session('cart') as $id => $details)
+                @php $total += $details['price'] * $details['quantity'] @endphp
+                @endforeach
+                <div class="subtotal">
+                    <p>TOTAL:</p>
+                    <p><span data-th="Subtotal">${{ $details['price'] * $details['quantity'] }}</span></p>
                 </div>
+                <a href="/cart">
+                    <button class="cart_btn btn1">View Cart</button>
+                </a>
+                <a href="{{ route('checkout.index') }}">
+                    <button class="cart_btn">Checkout</button>
+                </a>
             </div>
         </div>
     </div>
@@ -95,45 +102,6 @@
             backdrop.style.display = 'none';
         }, 500);
     }
-
-    // $(".update-cart-minus").click(function (e) {
-    //     e.preventDefault();
-
-    //     var btn_minus = document.querySelector('.update-cart-value').innerHTML
-    //     console.log(btn_minus);
-    //     // console.log(ele)
-    //     $.ajax({
-    //         url: "{{ route('update.cart') }}",
-    //         method: "patch",
-    //         data: {
-    //             _token: '{{ csrf_token() }}',
-    //             id: ele.parents("tr").attr("data-id"),
-    //             quantity: ele.parents("tr").find(".quantity").val()
-    //         },
-    //         success: function (response) {
-    //             // window.location.reload();
-    //         }
-    //     });
-    // });
-
-    // $(".update-cart-plus").click(function (e) {
-    //     e.preventDefault();
-
-    //     var ele = document.querySelector('.update-cart')
-    //     // console.log(ele)
-    //     $.ajax({
-    //         url: "{{ route('update.cart') }}",
-    //         method: "patch",
-    //         data: {
-    //             _token: '{{ csrf_token() }}',
-    //             id: ele.parents("tr").attr("data-id"),
-    //             quantity: ele.parents("tr").find(".quantity").val()
-    //         },
-    //         success: function (response) {
-    //             // window.location.reload();
-    //         }
-    //     });
-    // });
 
     function setHeaders(headers) {
         for (let key in headers) {
@@ -173,50 +141,79 @@
         });
     });
 
-    $(".update-cart-minus").click(function(e) {
-        e.preventDefault();
+    document.addEventListener("DOMContentLoaded", function() {
+        const cartItems = document.querySelectorAll(".cart_item");
 
-        var btn_minus = $(this).siblings('.update-cart-value');
-        var quantity = parseInt(btn_minus.text());
+        cartItems.forEach(cartItem => {
+            const inputField = cartItem.querySelector('.product_quantity');
+            const minusBtn = cartItem.querySelector('#minus-btn');
+            const plusBtn = cartItem.querySelector('#plus-btn');
+            const productId = cartItem.dataset.value;
+            const price = parseFloat(cartItem.querySelector('.item_details-price').textContent.replace('$', ''));
+            const subtotalElement = cartItem.querySelector('[data-th="Subtotal"]');
 
-        if (quantity > 1) {
-            quantity--;
-            updateCartItem($(this), quantity);
-        }
-    });
-
-    $(".update-cart-plus").click(function(e) {
-        e.preventDefault();
-
-        var btn_plus = $(this).siblings('.update-cart-value');
-        var quantity = parseInt(btn_plus.text());
-
-        quantity++;
-        updateCartItem($(this), quantity);
-    });
-
-    function updateCartItem(button, quantity) {
-        var cartItem = button.closest(".cart_item");
-        var productId = cartItem.data('value');
-
-        $.ajax({
-            url: "{{ route('update.cart') }}",
-            method: "patch",
-            data: {
-                _token: '{{ csrf_token() }}',
-                id: productId,
-                quantity: quantity
-            },
-            success: function(response) {
-                if (response.success) {
-                    cartItem.find('.update-cart-value').text(quantity);
-                    //updateCartTotal();
+            function updateCart(quantity) {
+                if (quantity < 1) {
+                    quantity = 1;
+                    inputField.value = quantity;
                 }
-            },
-            error: function(xhr) {
-                console.error("Error:", xhr.status, xhr.statusText);
+                if (quantity > 100) {
+                    quantity = 100;
+                    inputField.value = quantity;
+                }
+                const xhr = new XMLHttpRequest();
+                xhr.open("PATCH", `{{ route('update.cart') }}`);
+                xhr.setRequestHeader("X-CSRF-TOKEN", '{{ csrf_token() }}');
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        // Update the subtotal
+                        const subtotal = price * quantity;
+                        subtotalElement.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
+
+                        // Update the total
+                        let total = 0;
+                        document.querySelectorAll('[data-th="Subtotal"]').forEach(subtotalElement => {
+                            total += parseFloat(subtotalElement.textContent.replace('Subtotal: $', ''));
+                        });
+                        document.querySelector('#total').textContent = `Total: $${total.toFixed(2)}`;
+                    } else {
+                        console.error("Error:", xhr.status, xhr.statusText);
+                    }
+                };
+                xhr.onerror = function() {
+                    console.error("Network error");
+                };
+                xhr.send(`id=${productId}&quantity=${quantity}`);
             }
+
+            inputField.addEventListener('input', function() {
+                let quantity = parseInt(inputField.value);
+                if (isNaN(quantity)) {
+                    quantity = 1;
+                    inputField.value = quantity;
+                }
+                updateCart(quantity);
+            });
+
+            minusBtn.addEventListener('click', function() {
+                let quantity = parseInt(inputField.value);
+                if (quantity > 1) {
+                    quantity--;
+                    inputField.value = quantity;
+                    updateCart(quantity);
+                }
+            });
+
+            plusBtn.addEventListener('click', function() {
+                let quantity = parseInt(inputField.value);
+                if (quantity < 100) {
+                    quantity++;
+                    inputField.value = quantity;
+                    updateCart(quantity);
+                }
+            });
         });
-    }
+    });
 </script>
 @endsection

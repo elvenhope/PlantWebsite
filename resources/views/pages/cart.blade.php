@@ -33,19 +33,19 @@ Cart
         <div class="item_details">
             <p>{{ $details['name'] }}</p>
             <strong class="item_details-price">${{ $details['price'] }}</strong>
-            <div class="frame-container">
+            <div class="qty">
 
-                <div class="button frame-container-column col-45">
+
                     <button id="minus-btn">-</button>
-                </div>
-                <div class="number frame-container-column col-25">
+
+
                     <input class="product_quantity" id="quantity" type="number" value="{{$details['quantity']}}" min="1"
                         step="1" max="100" pattern="/^/d+$/"
                         onKeyPress="if(this.value.length==3) return false;" required />
-                </div>
-                <div class="button frame-container-column col-45">
+
+
                     <button id="plus-btn">+</button>
-                </div>
+
             </div>
 
             <span data-th="Subtotal">Subtotal: ${{ $details['price'] * $details['quantity'] }}</span>
