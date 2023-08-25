@@ -181,6 +181,10 @@
     scale: 1;
 }
 
+#plus-btn:focus, #minus-btn:focus{
+    outline: 0;
+}
+
 .qty button:first-of-type {
     font-size: 2rem;
     padding-bottom: 5px;
