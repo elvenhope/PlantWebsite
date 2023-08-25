@@ -67,10 +67,9 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 # PlantWebsite
 Magebit Bootcamp 2023 Project
 
-## Authors
+## Authors:
 
-Aleksandrs Kivlenieks
-Aleks Grišins
-Braiens Stuglis
-Davit Zuroshvili
-Dmitrijs Pisarenko
+- Aleksandrs Kivlenieks
+- Braiens Stuglis
+- Davit Zuroshvili
+- Aleks Grišins
