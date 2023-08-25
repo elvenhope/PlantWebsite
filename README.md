@@ -12,7 +12,7 @@
 PHP >8.1.22;
 Laravel Framework >10.20.0;
 
-Step by step setup:
+## Step by step setup:
 
 - Install composer, by running : 'composer install'
 - If you have composer installed, run : 'composer update'
@@ -20,8 +20,6 @@ Step by step setup:
 - Create a mysql database. (Originally we made a database named PlantWebsite, but it's up to you - don't forget to change it in the .env file)
 - Run 'php artisan migrate:refresh --seed' to populate your database with items. (12 items in this seeder)
 - Run 'php artisan serve' and you should be ready to go!
-
-This project was created using 
 
 ## Security Vulnerabilities
 
