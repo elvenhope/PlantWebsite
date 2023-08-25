@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 @endforeach
-                
+
             </div>
             <!-- /Item -->
             <!-- Cart Actions -->
@@ -104,7 +104,7 @@
             xhr.setRequestHeader(key, headers[key])
         }
     }
-
+    updateSubtotal();
     function updateSubtotal() {
         let total = 0;
 
@@ -143,7 +143,6 @@
                     xhr.onload = function() {
                         if (xhr.status === 200) {
                             cartItem.remove();
-                            updateSubtotal();
                             window.location.reload();
                         } else {
                             console.error("Error:", xhr.status, xhr.statusText);
@@ -153,7 +152,6 @@
                         console.error("Network error");
                     };
                     xhr.send();
-                    window.location.reload();
                 }
             });
         });
