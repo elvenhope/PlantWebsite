@@ -502,6 +502,10 @@ button:hover,#summerButton:hover {
     font-family: proxima-nova,sans-serif;
 }
 
+.sk_branding .tutorial_link {
+    display: none !important;
+}
+
 /* Assistant section */
 
 .assistant {
@@ -512,7 +516,7 @@ button:hover,#summerButton:hover {
     align-items: center;
     justify-content: center;
     padding: 40px 20px 40px 20px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 #assistantText {
@@ -593,7 +597,7 @@ button:hover,#summerButton:hover {
 
 .footer-column h3 {
     margin-bottom: 20px;
-    font-size: 15px;
+    font-size: 1.1em;
     color: #1B2A3A;
 }
 
@@ -619,6 +623,7 @@ div.soc-media {
     font-size: 0.9em;
     text-align: center;
     margin-right: 20px;
+    display: flex;
 }
 
 div.soc-media a.facebook {
@@ -646,18 +651,21 @@ div.soc-media a.twitter {
 }
 
 div.soc-media a {
-    display: inline-block;
+    display: flex;
     font-size: 1em;
     text-decoration: none;
     color: white;
     width: 2.4em;
-    padding: 0.55em 0.3em;
+    height: 2.4em;
     clear: both;
     text-align: center;
-    margin: 0.5em 0.1em;
+    margin: 0.5em 0.2em;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-links-mobile {
@@ -901,10 +909,6 @@ div.soc-media a {
       .footer-content {
         align-items: center;
         justify-content: center;
-      }
-
-      .footer-column h3,a {
-        font-size: 0.8em;
       }
 
       .footer-column {
