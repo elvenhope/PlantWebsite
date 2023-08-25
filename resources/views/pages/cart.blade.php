@@ -58,8 +58,8 @@ Cart
     <button class="btn btn-success" onclick="window.location.href='{{ url('/checkout') }}'">Checkout</button>
 </div>
 @endforeach
-@else 
-<div id="emptyCartContainer"> 
+@else
+<div id="emptyCartContainer">
     <h1>Your cart is empty!</h1>
     <p>Your cart is currently empty, head back to the homepage to pick out some plants!</p>
     <button onclick="javascript:history.back()">Go Back</button>
@@ -142,12 +142,7 @@ Cart
                     const subtotal = price * quantity;
                     subtotalElement.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
 
-                    // Update the total
-                    let total = 0;
-                    document.querySelectorAll('[data-th="Subtotal"]').forEach(subtotalElement => {
-                        total += parseFloat(subtotalElement.textContent.replace('Subtotal: $', ''));
-                    });
-                    document.querySelector('#total').textContent = `Total: $${total.toFixed(2)}`;
+                    window.location.reload();
                 } else {
                     console.error("Error:", xhr.status, xhr.statusText);
                 }
