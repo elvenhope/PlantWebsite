@@ -12,7 +12,7 @@
 PHP >8.1.22;
 Laravel Framework >10.20.0;
 
-## Step by step setup:
+### Step by step setup:
 
 - Install composer, by running : 'composer install'
 - If you have composer installed, run : 'composer update'
